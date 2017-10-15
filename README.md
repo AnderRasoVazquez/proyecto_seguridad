@@ -19,7 +19,7 @@ Para probarlo entrar en la siguiente página con el navegador `http://localhost/
 
  En nuestro caso **es necesario que Apache y MySQL estén corriendo**, FTP da lo mismo, no lo vamos a usar.
 
-1. **(Con GUI)** Abrir el adiministrador de servers:
+1. **(Con GUI)** Abrir el administrador de servers:
     + `sudo /opt/lampp/manager-linux-x64.run `
         + En la pestaña `Manage Servers` se pueden iniciar/reiniciar/parar el servidor Apache/MySQL/FTP.
 2. **(Sin GUI)** usar comandos de Xampp:
