@@ -14,3 +14,15 @@
     + Creará la carpeta `/opt/lampp/htdocs/proyecto_seguridad/` y en esta será en la que trabajemos.
 
 Para probarlo entrar en la siguiente página con el navegador `http://localhost/proyecto_seguridad/`.
+
+## 2 opciones para iniciar Xampp en Linux
+
+ En nuestro caso **es necesario que Apache y MySQL estén corriendo**, FTP da lo mismo, no lo vamos a usar.
+
+1. **(Con GUI)** Abrir el adiministrador de servers:
+    + `sudo /opt/lampp/manager-linux-x64.run `
+        + En la pestaña `Manage Servers` se pueden iniciar/reiniciar/parar el servidor Apache/MySQL/FTP.
+2. **(Sin GUI)** usar comandos de Xampp:
+    + Iniciar todos `sudo /opt/lampp/lampp start`
+    + Parar todos `sudo /opt/lampp/lampp stop`
+    + También se pueden iniciar o parar de uno en uno `/opt/lampp/lampp help`
