@@ -12,3 +12,5 @@
 5. Por último, clonar este repositorio en su sitio:
     + `git clone git@github.com:AnderRasoVazquez/proyecto_seguridad.git /opt/lampp/htdocs/proyecto_seguridad`
     + Creará la carpeta `/opt/lampp/htdocs/proyecto_seguridad/` y en esta será en la que trabajemos.
+
+Para probarlo entrar en la siguiente página con el navegador `http://localhost/proyecto_seguridad/`.
