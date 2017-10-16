@@ -26,3 +26,25 @@ Para probarlo entrar en la siguiente página con el navegador `http://localhost/
     + Iniciar todos `sudo /opt/lampp/lampp start`
     + Parar todos `sudo /opt/lampp/lampp stop`
     + También se pueden iniciar o parar de uno en uno `/opt/lampp/lampp help`
+
+## Creación del usuario
+
+*Para poder hacer esto hay que asegurarse de que el servidor de MySQL de Xampp esté iniciado.*
+
+1. Entrar al MySQL de Xampp:
+    + `/opt/lampp/mysql -uroot` (por defecto no tiene contraseña)
+2. Desde la consola de MySQL de Xampp:
+    + `CREATE USER 'sgssi'@'localhost' IDENTIFIED BY 'sgssi';`
+    + `GRANT ALL PRIVILEGES ON * . * TO 'sgssi'@'localhost';`
+
+Ahora ya tenemos el usuario creado y si quisiéramos podríamos entrar a la consola de MySQL con él `/opt/lampp/bin/mysql -usgssi -p`
+
+## Problemas comunes
+
+### El servidor de MySQL no se puede iniciar
+
+Es probable que haya un conflicto con el servidor de MySQL del ordenador porque utiliza el mismo puerto, solo hay que pararlo.
+
++ `sudo systemctl stop mysqld`
++ **(Opcional para que no se inicie por defecto)**`sudo systemctl disable mysqld`
++ `sudo /opt/lampp/lampp start` Ahora debería iniciarse.
