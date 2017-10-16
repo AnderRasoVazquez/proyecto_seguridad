@@ -26,3 +26,5 @@ Para probarlo entrar en la siguiente página con el navegador `http://localhost/
     + Iniciar todos `sudo /opt/lampp/lampp start`
     + Parar todos `sudo /opt/lampp/lampp stop`
     + También se pueden iniciar o parar de uno en uno `/opt/lampp/lampp help`
+    
+    
