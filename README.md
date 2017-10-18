@@ -52,3 +52,4 @@ Es probable que haya un conflicto con el servidor de MySQL del ordenador porque 
 ## Anexos
 
 + [PHP coding guidelines](http://www.php-fig.org/psr/psr-2/#11-example)
++ [JavaScript coding guidelines](https://www.w3schools.com/js/js_conventions.asp)
