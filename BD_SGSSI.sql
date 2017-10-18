@@ -20,7 +20,7 @@ CREATE TABLE `articulo` (
   `f_ult_mod` date DEFAULT NULL,
   `autor` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `articulo`
@@ -39,7 +39,7 @@ CREATE TABLE `categorias` (
   `categoria` varchar(20) NOT NULL,
   PRIMARY KEY (`id_articulo`,`categoria`),
   CONSTRAINT `categorias_ibfk_1` FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `categorias`
@@ -58,7 +58,7 @@ CREATE TABLE `referencias` (
   `referencia` varchar(20) NOT NULL,
   PRIMARY KEY (`id_articulo`,`referencia`),
   CONSTRAINT `referencias_ibfk_1` FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `referencias`
@@ -81,7 +81,7 @@ CREATE TABLE `usuario` (
   `email` varchar(20) NOT NULL,
   `contraseña` varchar(300) NOT NULL,
   PRIMARY KEY (`dni`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `usuario`
