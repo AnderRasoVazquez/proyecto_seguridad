@@ -48,3 +48,7 @@ Es probable que haya un conflicto con el servidor de MySQL del ordenador porque 
 + `sudo systemctl stop mysqld`
 + **(Opcional para que no se inicie por defecto)**`sudo systemctl disable mysqld`
 + `sudo /opt/lampp/lampp start` Ahora debería iniciarse.
+
+## Anexos
+
++ [PHP coding guidelines](http://www.php-fig.org/psr/psr-2/#11-example)
