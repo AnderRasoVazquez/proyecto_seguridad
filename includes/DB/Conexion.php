@@ -1,13 +1,10 @@
 <?php
 
 /**
- * Class Connection to Database
- * with Mysqli driver
- *
- * @author José Luis Cortés <jluis.cortes.cuevas@gmail.com> @lscortesc
- *
+ * Clase para conectarse a la BD
+ * con el driver Mysqli
  */
-class Connection
+class Conexion
 {
     /**
      * @var string
@@ -43,7 +40,6 @@ class Connection
     public function setHost($host)
     {
         $this->host = $host;
-
         return $this;
     }
 
@@ -61,7 +57,6 @@ class Connection
     public function setUser($user)
     {
         $this->user = $user;
-
         return $this;
     }
 
@@ -79,7 +74,6 @@ class Connection
     public function setPass($pass)
     {
         $this->pass = $pass;
-
         return $this;
     }
 
@@ -97,7 +91,6 @@ class Connection
     public function setDb($db)
     {
         $this->db = $db;
-
         return $this;
     }
 
@@ -107,15 +100,18 @@ class Connection
     private $connection;
 
     /**
-     * Connection constructor.
+     * Constructor para conexion
      */
     public function __construct($connect = true)
     {
         $this->host = 'localhost';
         $this->user = 'sgssi';
         $this->pass = 'sgssi';
-        $this->db = 'proyect_name';
+        $this->db = 'bd_sgssi';
 
+        /**
+         * Connect sirve para que se conecte automaticamente a la BD
+         */
         if ($connect) {
             $this->connect();
         }
@@ -123,15 +119,14 @@ class Connection
 
     public function connect()
     {
-        if (
-            ! $this->connection = mysqli_connect(
+        if ( ! $this->connection = mysqli_connect(
                 $this->host,
                 $this->user,
                 $this->pass,
                 $this->db
             )
         ) {
-            die('Could not connect to database: ' . mysqli_connect_error());
+            die('Imposible conectar con la base de datos: ' . mysqli_connect_error());
         }
     }
 
