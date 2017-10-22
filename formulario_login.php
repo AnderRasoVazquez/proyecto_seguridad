@@ -1,12 +1,11 @@
 <?php
-// quería trastear y probar a poner una imagen
 $image = "img/ragnaros.jpg";
 ?>
 
 <html>
     <head>
         <title>
-            identify INSETC!
+            identify INSECT!
         </title>
     </head>
     <body>
