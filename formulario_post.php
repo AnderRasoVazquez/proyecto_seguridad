@@ -14,6 +14,7 @@ include "includes/header.php";
         <div id="tag_container">
         </div>
         <a href="#" onclick="add_tag()">+Add tag</a>
+        <a href="#" onclick="rm_tag()">-Revome tag</a>
         <legend>Texto en Markdown:</legend>
         <textarea id="sourceTA" name="content" oninput="convert_markdown()" form="formulario_post"></textarea>
         <input type="button" name="submit" onclick="checkPost()" value="Crear snippet">
@@ -38,5 +39,14 @@ function add_tag() {
     container.appendChild(input);
     // Append a line break
     container.appendChild(document.createElement("br"));
+}
+
+function rm_tag() {
+    var container = document.getElementById("tag_container")
+    // Remove the container's last child twice:
+    // First the input
+    container.removeChild(container.lastChild);
+    // Then the line break
+    container.removeChild(container.lastChild);
 }
 </script>
