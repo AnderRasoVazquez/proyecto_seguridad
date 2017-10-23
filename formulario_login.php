@@ -2,6 +2,7 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+include "navigation_bar.php";
 ?>
     <h1>Log in to <a href="index.php">Snippedia</a></h1>
     <form action="index.html" method="post" id="loginPost">

@@ -146,3 +146,73 @@ code {
     color: #444;
     font-family: monospace;
 }
+
+/* Conjunto de estilos usados para la NavBar */
+
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
+
+nav{
+  float: right;
+}
+
+.logo{
+  float: left;
+}
+
+.nav_body{
+  margin: 0;
+  font-weight: 100;
+}
+
+.nav_header{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 65px; /* Padding top + bottom + font size */
+  background: #55ddaa
+}
+
+.nav_header::after{
+  content: '';
+  display: table;
+  clear: both;
+  height: 0;
+}
+
+.nav_ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li{
+  display: inline-block;
+  margin-left: 125px;
+  margin-right: 25px;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+nav li:hover{
+  transition: all ease-in-out 1000ms;
+  background: #9999cc;
+}
+
+nav a{
+  color: #333;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover{
+  color: #000;
+  text-decoration: none;
+  transition: all ease-in-out 1000ms;
+}
