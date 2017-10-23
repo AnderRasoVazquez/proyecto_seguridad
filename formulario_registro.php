@@ -19,11 +19,11 @@
       <b>Phone number*</b><br>
       <input type="number" name="phone"><br>
       <b>Email address</b><br>
-      <input type="text" name="email"><br>
+      <input type="email" name="email"><br>
       <b>Password</b><br>
-      <input type="text" name="pass"><br>
+      <input type="password" name="pass"><br>
       <b>Repeat your password</b><br>
-      <input type="text" name="pass2"><br><br>
+      <input type="password" name="pass2"><br><br>
 
       The fields marked with * are optional.
       <br>
