@@ -1,6 +1,6 @@
 table {
     display: table;
-    border-collapse: collapse; // Prevent double borders
+    border-collapse: collapse; /* Prevent double borders */
     border-color: grey;
     width: 100%;
     max-width: 100%;
