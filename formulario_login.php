@@ -1,29 +1,19 @@
+<title>Login - Snippedia</title>
 <?php
-$image = "img/ragnaros.jpg";
+// cabecera de la pagina
+include "includes/header.php";
 ?>
-
-<html>
-    <head>
-        <title>
-            identify INSECT!
-        </title>
-    </head>
-    <body>
-        <form>
-            <?php
-                /*
-                se comprueba si el archivo de la imagen existe
-                si no existe no se hace nada
-                */
-                if (file_exists($image)) {
-                    echo("<image src=$image title='TOO SOON!'>");
-                }
-            ?>
-            <br><br>
-            Nombre: <input type="text" name="name"><br>
-            Contraseña: <input type="text" name="pass"><br>
-            <input type='button' value='Enviar'>
-            <input type='reset' value='Borrar'>
-        </form>
-    </body>
-</html>
+    <h1>Log in to Snippedia</h1>
+    <h3>The best wiki for small developers!</h3>
+    <form action="index.html" method="post">
+        <b>Nombre:</b><br>
+        <input type="text" name="name"><br>
+        <b>Contraseña:</b><br>
+        <input type="text" name="pass"><br><br>
+        <input type='button' value='Enviar'>
+        <input type='reset' value='Borrar'>
+    </form>
+<?php
+// cabecera de la pagina
+include "includes/footer.php";
+?>
