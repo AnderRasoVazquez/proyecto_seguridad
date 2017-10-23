@@ -6,6 +6,7 @@
   <?php
   // cabecera de la pagina
   include "includes/header.php";
+  include "navigation_bar.php";
   ?>
 
   <h1>
@@ -42,6 +43,10 @@
       echo $row->dni . " " . $row->nombre . " " . $row->apellidos . "<br>";
   }
 
+  // texto relleno
+  for ($i=0; $i < 50; $i++) {
+    echo "Soy una bonita línea de texto. (≧◡≦)<br>";
+  }
   // pie de pagina
   include "includes/footer.php";
   ?>

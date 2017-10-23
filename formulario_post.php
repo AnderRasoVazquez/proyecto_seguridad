@@ -1,6 +1,7 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+include "navigation_bar.php";
 ?>
 
 <form action="add_post.php" method="post" id="form_post">

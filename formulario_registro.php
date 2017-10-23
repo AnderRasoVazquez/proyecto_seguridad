@@ -5,6 +5,7 @@
     <?php
     // cabecera de la pagina
     include "includes/header.php";
+    include "navigation_bar.php";
     ?>
     <h1>Join Snippedia</h1>
     <h3>The best wiki for small developers!</h3>
