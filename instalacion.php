@@ -3,6 +3,7 @@
 $server = "localhost";
 $user = "sgssi";
 $passw = "sgssi";
+$bd = "db_sgssi";
 
 $conn = new mysqli($server, $user, $passw);
 
@@ -22,16 +23,16 @@ function execute_query($sql, $desc, $error){
 }
 
 // crear base de datos
-$sql = "DROP DATABASE IF EXISTS `bd_sgssi`";
+$sql = "DROP DATABASE IF EXISTS $bd";
 execute_query($sql, "Borrando base de datos si ya existe",
                     "Error al intentar borrar bd si ya existe");
 
-$sql = "CREATE DATABASE `bd_sgssi`";
+$sql = "CREATE DATABASE $bd";
 execute_query($sql, "Creando base de datos",
                     "Error al intentar crear la base de datos");
 
 // ahora que esta creada la bd la seleccionamos para operar con ella
-$conn->select_db("bd_sgssi");
+$conn->select_db($bd);
 
 // crear todas las tablas
 $sql = "
