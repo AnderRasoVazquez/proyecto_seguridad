@@ -46,13 +46,11 @@ function add_tag() {
     input.name = "categorias[]";
     input.className += " form-control";
     container.appendChild(input);
-    // Append a line break
 }
 
 function rm_tag() {
     var container = document.getElementById("tag_container")
-    // Remove the container's last child twice:
-    // First the input
+    // Remove the container's last child
     container.removeChild(container.lastChild);
 }
 
@@ -64,13 +62,11 @@ function add_reference() {
     input.name = "references[]";
     input.className += " form-control";
     container.appendChild(input);
-    // Append a line break
 }
 
 function rm_reference() {
     var container = document.getElementById("reference_container")
-    // Remove the container's last child twice:
-    // First the input
+    // Remove the container's last child
     container.removeChild(container.lastChild);
 }
 </script>
