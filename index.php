@@ -22,7 +22,7 @@
     <br>
     <a href="formulario_registro.php">Don't have an account yet?.</a>
     <br>
-    <a href="form_new_post.php"> Submit a new post!</a>
+    <a href="formulario_post.php"> Submit a new post!</a>
 
   <br>
   <br>
