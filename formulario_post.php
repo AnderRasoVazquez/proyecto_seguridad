@@ -46,7 +46,5 @@ function rm_tag() {
     // Remove the container's last child twice:
     // First the input
     container.removeChild(container.lastChild);
-    // Then the line break
-    container.removeChild(container.lastChild);
 }
 </script>
