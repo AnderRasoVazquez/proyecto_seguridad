@@ -1,4 +1,4 @@
-function run() {
+function convert_markdown() {
     var text = document.getElementById('sourceTA').value,
         target = document.getElementById('targetDiv'),
         converter = new showdown.Converter({
@@ -27,7 +27,18 @@ function checkLogin(){
 }
 
 function checkPost(){
-
+    var title = document.forms["form_post"]["title"].value;
+    var author = document.forms["form_post"]["author"].value;
+    var content = document.getElementById("sourceTA").value;
+    var tag = document.getElementById("tag").value;
+    if (title == "" ||
+        author == "" ||
+        tag == "" ||
+        content == "") {
+        console.log("campos nulos");
+    } else {
+        console.log("campos con texto");
+    }
 }
 
 function checkEdit(){

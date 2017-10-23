@@ -3,26 +3,26 @@
 include "includes/header.php";
 ?>
 
-<form action="add_post.php" method="post" id="formulario_post">
+<form action="add_post.php" method="post" id="form_post">
     <div id="textinput">
         <legend>Título:</legend>
-        <input type="text" name="titulo" value="">
+        <input type="text" name="title" value="">
         <legend>Autor:</legend>
-        <input type="text" name="autor" value="">
+        <input type="text" name="author" value="">
         <legend>Categorías:</legend>
-        <input type="text" name="categorias[]" value="">
+        <input type="text" id="tag" name="tags[]" value="">
         <div id="tag_container">
         </div>
         <a href="#" onclick="add_tag()">+Add tag</a>
         <legend>Texto en Markdown:</legend>
-        <textarea id="sourceTA" oninput="run()" form="formulario_post"></textarea>
-        <input type="button" name="submit" value="Crear snippet">
-    </div>
-    <div id="prev_panel">
-        <legend>Previsualización</legend>
-        <div id="targetDiv"></div>
+        <textarea id="sourceTA" name="content" oninput="convert_markdown()" form="formulario_post"></textarea>
+        <input type="button" name="submit" onclick="checkPost()" value="Crear snippet">
     </div>
 </form>
+<div id="prev_panel">
+    <legend>Previsualización</legend>
+    <div id="targetDiv"></div>
+</div>
 
 <?php
 // pie de pagina
