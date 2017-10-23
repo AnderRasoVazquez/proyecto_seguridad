@@ -24,6 +24,7 @@ include "includes/header.php";
         <a href="#" onclick="add_reference()">+Add reference</a>
         <a href="#" onclick="rm_reference()">-Revome reference</a>
         <br>
+        <br>
         <input type="button" class="btn btn-success" name="submit" onclick="checkPost()" value="+Add Snippet">
     </div>
 </form>
