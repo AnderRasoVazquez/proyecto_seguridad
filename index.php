@@ -20,7 +20,7 @@
   </h3>
     <a href="formulario_login.php">Click here if you want to login.</a>
     <br>
-    <a href="formulario_registro.php">Don't have an account yet?.</a>
+    <a href="formulario_registro.php">Don't have an account yet?</a>
     <br>
     <a href="formulario_post.php"> Submit a new post!</a>
 

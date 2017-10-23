@@ -17,3 +17,19 @@ function run() {
         }
     }
 }
+
+function checkSignup(){
+
+}
+
+function checkLogin(){
+
+}
+
+function checkPost(){
+
+}
+
+function checkEdit(){
+
+}
