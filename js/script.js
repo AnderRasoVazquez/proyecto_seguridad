@@ -23,7 +23,17 @@ function checkSignup(){
 }
 
 function checkLogin(){
-
+    var success = false;
+    var name = document.forms["login_post"]["name"].value;
+    var pass = document.forms["login_post"]["pass"].value;
+    // comprobar si los datos de los campos son válidos
+    if (success) {
+        document.getElementById("login_post").submit;
+    }
+    else {
+        document.getElementById("error").innerHTML =
+        "El nombre de usuario o contraseña no es válido."
+    }
 }
 
 function checkPost(){
