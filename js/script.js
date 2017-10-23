@@ -23,17 +23,26 @@ function checkSignup(){
 }
 
 function checkLogin(){
-    var success = false;
-    var name = document.forms["login_post"]["name"].value;
-    var pass = document.forms["login_post"]["pass"].value;
+    var name = document.forms["loginPost"]["name"].value;
+    var pass = document.forms["loginPost"]["pass"].value;
     // comprobar si los datos de los campos son válidos
-    if (success) {
-        document.getElementById("login_post").submit;
+    if (isNameCorrect(name) && isPassCorrect(pass)) {
+        document.getElementById("loginPost").submit;
     }
     else {
         document.getElementById("error").innerHTML =
         "El nombre de usuario o contraseña no es válido."
     }
+}
+
+function isNameCorrect(pName){
+    // condiciones para que el nombre de usuario sea válido
+    return true;
+}
+
+function isPassCorrect(pPass){
+    // condiciones para que la contraseña sea válida
+    return true;
 }
 
 function checkPost(){
