@@ -1,6 +1,6 @@
 table {
     display: table;
-    border-collapse: collapse; // Prevent double borders
+    border-collapse: collapse; /* Prevent double borders */
     border-color: grey;
     width: 100%;
     max-width: 100%;
@@ -54,11 +54,13 @@ blockquote {
 #targetDiv {
     border: 1px solid #e9ecef;
     overflow: auto;
-    height: 800px;
+    /*height: 100%;*/
+    /*max-height: 450px;*/
+    height: 450px;
     padding: 10px;
 }
 
-#right {
+#prev_panel {
     float: right;
     width: 45%;
     margin: 20px;
@@ -67,14 +69,15 @@ blockquote {
 #textinput {
     float: left;
     width: 45%;
-    height: 800px;
+    height: 100%;
     margin: 20px;
 }
 
 #sourceTA {
     width: 100%;
-    height: 100%;
+    height: 300px;
     margin-top: 5px;
+    resize: none;
 }
 
 a {
