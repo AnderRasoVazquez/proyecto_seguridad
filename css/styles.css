@@ -219,7 +219,7 @@ nav{
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 65px; /* Padding top + bottom + font size */
+  height: 70px; /* Padding top + bottom + font size */
   background: #55ddaa
 }
 
@@ -237,9 +237,9 @@ nav{
 }
 
 nav li{
-  display: inline-block;
   margin-left: auto;
   margin-right: auto;
+  display: inline-block;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 25px;
