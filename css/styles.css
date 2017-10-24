@@ -247,7 +247,7 @@ nav li{
 }
 
 nav li:hover{
-  transition: all ease-in-out 1000ms;
+  transition: all ease-in-out 300ms;
   background: #9999cc;
 }
 
