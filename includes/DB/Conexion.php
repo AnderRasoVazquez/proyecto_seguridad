@@ -119,13 +119,15 @@ class Conexion
 
     public function connect()
     {
-        if ( ! $this->connection = mysqli_connect(
+        if ( $this->connection = mysqli_connect(
                 $this->host,
                 $this->user,
                 $this->pass,
                 $this->db
             )
         ) {
+            $this->connection->set_charset("utf8");
+        } else {
             die('Imposible conectar con la base de datos: ' . mysqli_connect_error());
         }
     }
