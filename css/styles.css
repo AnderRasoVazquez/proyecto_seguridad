@@ -194,6 +194,15 @@ code {
     font-family: monospace;
 }
 
+.form-inline{
+    margin-top: 17px;
+    margin-right: 10px;
+}
+
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+}
 /* Conjunto de estilos usados para la NavBar */
 
 .container{
@@ -202,7 +211,7 @@ code {
 }
 
 nav{
-  float: left;
+  /*float: left;*/
 }
 
 .bg-dark {
@@ -234,10 +243,15 @@ nav{
   height: 0;
 }
 
+#nav_search {
+    float: right;
+}
+
 .nav_ul{
   margin: 0;
   padding: 0;
   list-style: none;
+  float: left;
 }
 
 nav li{
