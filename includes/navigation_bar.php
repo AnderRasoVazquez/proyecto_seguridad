@@ -1,7 +1,9 @@
 <div class="nav_body">
     <header class="nav_header">
         <div class="nav_container">
-            <img src="img/logorandom.png" alt="logo" class="logo">
+            <a href="index.php">
+                <img src="img/logorandom.png" alt="logo" class="logo">
+            </a>
             <nav>
                 <ul class="nav_ul">
                     <li><a href="index.php">Home</a></li>
