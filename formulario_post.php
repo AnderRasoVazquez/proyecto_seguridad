@@ -3,6 +3,7 @@
 include "includes/header.php";
 ?>
 
+<h1>Create new Snippet</h1>
 <form action="add_post.php" method="post" id="form_post">
     <div id="textinput">
         <legend>Título:</legend>
