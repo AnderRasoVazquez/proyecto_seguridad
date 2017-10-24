@@ -6,6 +6,7 @@ $passw = "sgssi";
 $bd = "db_sgssi";
 
 $conn = new mysqli($server, $user, $passw);
+mysqli_set_charset($conn, "utf8");
 
 if (mysqli_connect_errno()) {
     printf("La conexion ha fallado: %s\n", mysqli_connect_error());
