@@ -14,3 +14,5 @@
 <body>
 
 <?php include "includes/navigation_bar.php" ?>
+
+<div id="content">
