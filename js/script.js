@@ -27,22 +27,28 @@ function checkLogin(){
     var pass = document.forms["loginPost"]["pass"].value;
     // comprobar si los datos de los campos son válidos
     if (isNameCorrect(name) && isPassCorrect(pass)) {
+        console.log("true");
         document.getElementById("loginPost").submit;
     }
     else {
+        console.log("false");
         document.getElementById("error").innerHTML =
         "El nombre de usuario o contraseña no es válido."
     }
 }
 
 function isNameCorrect(pName){
+    var success = false;
     // condiciones para que el nombre de usuario sea válido
-    return true;
+    success = pName != "";
+    return success;
 }
 
 function isPassCorrect(pPass){
+    var success = false;
     // condiciones para que la contraseña sea válida
-    return true;
+    success = pPass != "";
+    return success;
 }
 
 function checkPost(){
