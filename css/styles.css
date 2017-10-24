@@ -202,7 +202,11 @@ code {
 }
 
 nav{
-  float: right;
+  float: left;
+}
+
+.bg-dark {
+    background-color: #343a40!important;
 }
 
 .logo{
@@ -252,7 +256,7 @@ nav li:hover{
 }
 
 nav a{
-  color: #333;
+  color: #FFF;
   font-size: 15px;
   text-decoration: none;
   text-transform: uppercase;

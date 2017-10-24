@@ -1,5 +1,5 @@
 <div class="nav_body">
-    <header class="nav_header">
+    <header class="nav_header bg-dark">
         <div class="nav_container">
             <a href="index.php">
                 <img src="img/logorandom.png" alt="logo" class="logo">
