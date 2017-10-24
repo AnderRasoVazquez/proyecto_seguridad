@@ -8,11 +8,11 @@ include "includes/header.php";
         <legend>Nombre:</legend>
         <input class="form-control" type="text" name="name">
         <legend>Contraseña:</legend>
-        <input class="form-control" type="text" name="pass">
+        <input class="form-control" type="password" name="pass">
         <!-- párrafo en blanco para añadir posible mensaje de error -->
         <p id="error"></p>
-        <input type='button' onclick="checkLogin()" value='Login'>
-        <input type='reset' value='Reset'>
+        <input type='button' class="btn btn-dark" onclick="checkLogin()" value='Login'>
+        <input type='reset' class="btn btn-secondary" value='Reset'>
     </form>
 <?php
 // cabecera de la pagina

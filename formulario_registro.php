@@ -23,9 +23,8 @@ include "includes/header.php";
     <legend>Repeat your password</legend>
     <input class="form-control" type="password" name="pass2">
 
-    The fields marked with * are optional.
-    <br>
+    <br><i>The fields marked with * are optional.</i><br><br>
 
-    <input type='button' value='Enviar'>
-    <input type='reset' value='Borrar'>
+    <input type='button' class="btn btn-dark" value='Send'>
+    <input type='reset' class="btn btn-secondary"value='Reset'>
 </form>
