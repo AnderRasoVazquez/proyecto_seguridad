@@ -4,7 +4,7 @@
 include "includes/header.php";
 ?>
     <h1>Log in to Snippedia</h1>
-    <form action="index.html" method="post" id="loginPost">
+    <form action="login.php" method="post" id="loginForm">
         <legend>Nombre:</legend>
         <input class="form-control" type="text" name="name">
         <legend>Contraseña:</legend>
