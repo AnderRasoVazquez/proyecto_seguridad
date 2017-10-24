@@ -23,12 +23,12 @@ function checkSignup(){
 }
 
 function checkLogin(){
-    var name = document.forms["loginPost"]["name"].value;
-    var pass = document.forms["loginPost"]["pass"].value;
+    var name = document.forms["loginForm"]["name"].value;
+    var pass = document.forms["loginForm"]["pass"].value;
     // comprobar si los datos de los campos son válidos
     if (isNameCorrect(name) && isPassCorrect(pass)) {
         console.log("true");
-        document.getElementById("loginPost").submit;
+        document.getElementById("loginForm").submit();
     }
     else {
         console.log("false");
