@@ -6,7 +6,6 @@
   <?php
   // cabecera de la pagina
   include "includes/header.php";
-  include "navigation_bar.php";
   ?>
 
   <h1>
