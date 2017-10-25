@@ -6,17 +6,17 @@ include "includes/header.php";
 <h1>Create new Snippet</h1>
 <form action="add_post.php" method="post" id="form_post">
     <div id="textinput">
-        <legend>Título:</legend>
+        <legend>Title:</legend>
         <input class="form-control" type="text" name="title" value="">
-        <legend>Autor:</legend>
+        <legend>Author:</legend>
         <input class="form-control" type="text" name="author" value="">
-        <legend>Categorías:</legend>
+        <legend>Tags:</legend>
         <input class="form-control" type="text" id="tag" name="tags[]" value="">
         <div id="tag_container">
         </div>
         <a href="#" onclick="add_tag()">+Add tag</a>
         <a href="#" onclick="rm_tag()">-Revome tag</a>
-        <legend>Texto en Markdown:</legend>
+        <legend>Text in Markdown format:</legend>
         <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown()" form="formulario_post"></textarea>
         <legend>References:</legend>
         <input class="form-control" type="text" id="reference" name="references[]" value="">
@@ -30,7 +30,7 @@ include "includes/header.php";
     </div>
 </form>
 <div id="prev_panel">
-    <legend>Previsualización</legend>
+    <legend>Live Preview</legend>
     <div id="targetDiv"></div>
 </div>
 
