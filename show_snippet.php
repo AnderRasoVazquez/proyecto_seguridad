@@ -36,7 +36,7 @@ $ref_res = $con->query($sql);
 
 
 <div>
-    <textarea id="snippetContent" class="hidden" name="name" rows="8" cols="80"><?= $row->contenido ?></textarea>
+    <textarea id="snippetContent" class="hidden" name="name" rows="8" cols="80" readonly><?= $row->contenido ?></textarea>
 </div>
 
 <div id="snippetMarkdownContent">
