@@ -76,7 +76,7 @@ function add_tag() {
     var input = document.createElement("input");
     input.type = "text";
     input.name = "categorias[]";
-    input.className += " form-control";
+    input.className += " form-control form-control-sm";
     container.appendChild(input);
 }
 
