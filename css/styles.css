@@ -149,7 +149,7 @@ legend {
 }
 
 #targetDiv {
-    border: 1px solid #e9ecef;
+    border: 5px solid #e9ecef;
     overflow: auto;
     max-height: 600px;
     padding: 10px;
@@ -157,7 +157,7 @@ legend {
 
 #snippetMarkdownContent {
     padding: 20px;
-    border: 1px solid #e9ecef;
+    border: 5px solid #e9ecef;
 }
 
 #prev_panel {
