@@ -148,4 +148,14 @@ class Conexion
     {
         return $this->connection->close();
     }
+
+    /**
+     * Se usa después de una consulta para devolver
+     * el último id cuando es AUTO_INCREMENT
+     * @return int
+     */
+    public function getLastId()
+    {
+        return $this->connection->insert_id;
+    }
 }
