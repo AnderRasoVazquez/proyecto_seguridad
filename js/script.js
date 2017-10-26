@@ -85,6 +85,7 @@ function checkPost() {
     var author = document.forms["form_post"]["author"].value;
     var content = document.getElementById("sourceTA").value;
     var tag = document.getElementById("tag").value;
+    // TODO comprobar todos los tags
     if (title == "" ||
         author == "" ||
         tag == "" ||
@@ -104,9 +105,10 @@ function add_tag() {
     var container = document.getElementById("tag_container")
     // Create an <input> element, set its type and name attributes
     var input = document.createElement("input");
+    input.id = "tag";
     input.type = "text";
-    input.name = "categorias[]";
-    input.className += " form-control";
+    input.name = "tags[]";
+    input.className += " form-control form-control-sm";
     container.appendChild(input);
 }
 
