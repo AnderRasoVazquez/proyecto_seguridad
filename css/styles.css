@@ -148,6 +148,24 @@ legend {
     display: none;
 }
 
+.material-icons {
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+#tagList {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0;
+    overflow: hidden;
+}
+
+#tagList li {
+    float: left;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
 #targetDiv {
     border: 5px solid #e9ecef;
     overflow: auto;

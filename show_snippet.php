@@ -42,11 +42,11 @@ $ref_res = $con->query($sql);
 <div id="snippetMarkdownContent">
 </div>
 
-<h4>Tags</h4>
-<ul id=tag_list>
+<ul id=tagList>
+    <li><b>Tags:</b></li>
     <?php
     while($tag = $tag_res->fetch_object()) {
-        echo "<li>". $tag->categoria ."</li>";
+        echo "<li><a href='#'><i class='material-icons'>label_outline</i>". $tag->categoria ."</a></li>";
     }
      ?>
 </ul>
