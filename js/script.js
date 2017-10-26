@@ -60,8 +60,9 @@ function checkPost() {
         tag == "" ||
         content == "") {
         console.log("campos nulos");
+        window.alert("¡Ningún campo puede estar nulo!");
     } else {
-        console.log("campos con texto");
+        document.getElementById("form_post").submit();
     }
 }
 

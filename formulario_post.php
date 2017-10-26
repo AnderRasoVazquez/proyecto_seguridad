@@ -9,9 +9,9 @@ include "includes/header.php";
         <legend>Title:</legend>
         <input class="form-control" type="text" name="title" value="">
         <legend>Author:</legend>
-        <input class="form-control" type="text" name="author" value="">
+        <input class="form-control form-control-sm" type="text" name="author" value="">
         <legend>Tags:</legend>
-        <input class="form-control" type="text" id="tag" name="tags[]" value="">
+        <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="">
         <div id="tag_container">
         </div>
         <input type="button" class="btn btn-sm btn-dark" onclick="add_tag()" value="+ Tag">
@@ -26,7 +26,7 @@ include "includes/header.php";
         <input type="button" class="btn btn-sm btn-dark" onclick="rm_reference()" value="- Reference">
         <br>
         <br>
-        <input type="button" class="btn btn-success" name="submit" onclick="checkPost()" value="+Add Snippet">
+        <input type="button" class="btn btn-success" onclick="checkPost()" value="+Add Snippet">
     </div>
 </form>
 <div id="prev_panel">
