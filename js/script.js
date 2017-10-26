@@ -19,13 +19,26 @@ function convert_markdown() {
 }
 
 function checkSignup() {
-
+    console.log("HOLA");
+    var name = document.forms["signupForm"]["name"].value;
+    var birthdate = document.forms["signupForm"]["birthdate"].value;
+    var email = document.forms["signupForm"]["email"].value;
+    var phonenumber = document.forms["signupForm"]["phone"].value;
+    var pass = document.forms["signupForm"]["pass"].value;
+    var name = document.forms["signupForm"]["pass2"].value;
+    // Comprobar si los datos de los campos son válidos
+    if (isNameCorrect(name) && isPassCorrect(pass) && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
+        console.log("true");
+        //document.getElementById("signupForm").submit();
+    }else {
+        console.log("false");
+    }
 }
 
 function checkLogin() {
     var name = document.forms["loginForm"]["name"].value;
     var pass = document.forms["loginForm"]["pass"].value;
-    // comprobar si los datos de los campos son válidos
+    // Comprobar si los datos de los campos son válidos
     if (isNameCorrect(name) && isPassCorrect(pass)) {
         console.log("true");
         document.getElementById("loginForm").submit();
@@ -47,6 +60,23 @@ function isPassCorrect(pPass) {
     var success = false;
     // condiciones para que la contraseña sea válida
     success = pPass != "";
+    return success;
+}
+
+function isEmailCorrect(pEmail) {
+    var success = false;
+    // condiciones para que el email sea válido
+    success = pEmail != "";
+    return success;
+}
+
+function isBirthdateCorrect(pBirthdate) {
+    var success = false;
+    var ageDifMs = Date.now() - new Date(pBirthdate).getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+    // condiciones para que la fecha de nacimiento sea válida
+    success = age >= 18;//(Math.abs(today - pBirthdate)) > 13*365*24*3600*1000;
     return success;
 }
 
