@@ -14,23 +14,23 @@ include "includes/header.php";
         <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="">
         <div id="tag_container">
         </div>
-        <input type="button" class="btn btn-sm btn-dark" onclick="add_tag()" value="+ Tag">
-        <input type="button" class="btn btn-sm btn-dark" onclick="rm_tag()" value="- Tag">
+        <a class="btn btn-sm btn-dark" onclick="add_tag()"><i class="material-icons">add_circle</i></a>
+        <a class="btn btn-sm btn-dark" onclick="rm_tag()"><i class="material-icons">remove_circle</i></a>
         <legend>Text in Markdown format:</legend>
         <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown('sourceTA', 'targetDiv')" form="form_post"></textarea>
         <legend>References:</legend>
         <input class="form-control" type="text" name="references[]" value="">
         <div id="reference_container">
         </div>
-        <input type="button" class="btn btn-sm btn-dark" onclick="add_reference()" value="+ Reference">
-        <input type="button" class="btn btn-sm btn-dark" onclick="rm_reference()" value="- Reference">
+        <a class="btn btn-sm btn-dark" onclick="add_reference()"><i class="material-icons">add_circle</i></a>
+        <a class="btn btn-sm btn-dark" onclick="rm_reference()"><i class="material-icons">remove_circle</i></a>
         <br>
         <br>
-        <input type="button" class="btn btn-success" onclick="checkPost()" value="+Add Snippet">
+        <a class="btn btn-success" onclick="checkPost()"><i class="material-icons">cloud_upload</i> SUBMIT SNIPPET</a>
     </div>
 </form>
 <div id="prev_panel">
-    <legend>Live Preview</legend>
+    <legend><i class="material-icons">remove_red_eye</i> Live Preview</legend>
     <div id="targetDiv"></div>
 </div>
 
