@@ -41,7 +41,7 @@ CREATE TABLE `articulo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(20) NOT NULL,
   `contenido` text NOT NULL,
-  `f_ult_mod` date DEFAULT NULL,
+  `f_ult_mod` datetime DEFAULT NULL,
   `autor` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
