@@ -6,10 +6,10 @@
             </a>
             <nav>
                 <ul class="nav_ul">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="formulario_login.php">Login</a></li>
-                    <li><a href="formulario_registro.php">Sign up</a></li>
-                    <li><a href="formulario_post.php">Submit Snippet!</a></li>
+                    <a href="index.php"><li>Home</li></a>
+                    <a href="formulario_login.php"><li>Login</li></a>
+                    <a href="formulario_registro.php"><li>Sign up</li></a>
+                    <a href="formulario_post.php"><li>Submit Snippet!</li></a>
                 </ul>
                 <form id="nav_search" class="form-inline">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
