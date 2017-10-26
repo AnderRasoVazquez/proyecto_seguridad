@@ -19,7 +19,7 @@ include "includes/header.php";
         <legend>Text in Markdown format:</legend>
         <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown()" form="formulario_post"></textarea>
         <legend>References:</legend>
-        <input class="form-control" type="text" id="reference" name="references[]" value="">
+        <input class="form-control" type="text" name="references[]" value="">
         <div id="reference_container">
         </div>
         <input type="button" class="btn btn-sm btn-dark" onclick="add_reference()" value="+ Reference">
