@@ -9,19 +9,19 @@ include "includes/header.php";
 <h5>Create your account</h5>
 <form action="signup.php" method="post" id="signupForm">
     <legend>Name</legend>
-    <input class="form-control" type="text" name="name">
+    <input class="form-control form-control-sm" type="text" name="name">
     <legend>Second Name*</legend>
-    <input class="form-control" type="text" name="secondname">
+    <input class="form-control form-control-sm" type="text" name="secondname">
     <legend>Birth date</legend>
-    <input class="form-control" type="date" name="birthdate">
-    <legend>Phone number</legend>
-    <input class="form-control" type="number" name="phone">
+    <input class="form-control form-control-sm" type="date" name="pass">
+    <legend>Phone number*</legend>
+    <input class="form-control form-control-sm" type="number" name="phone">
     <legend>Email address</legend>
-    <input class="form-control" type="email" name="email">
+    <input class="form-control form-control-sm" type="email" name="email">
     <legend>Password</legend>
-    <input class="form-control" type="password" name="pass">
+    <input class="form-control form-control-sm" type="password" name="pass">
     <legend>Repeat your password</legend>
-    <input class="form-control" type="password" name="pass2">
+    <input class="form-control form-control-sm" type="password" name="pass2">
 
     <br><i>The fields marked with * are optional.</i><br><br>
 
