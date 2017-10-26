@@ -76,6 +76,10 @@ legend {
     transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
 .btn-sm {
     padding: .25rem .5rem;
     font-size: .875rem;
