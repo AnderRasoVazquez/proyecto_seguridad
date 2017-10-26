@@ -30,7 +30,7 @@ function checkSignup() {
     if (isNameCorrect(name) && isPassCorrect(pass) && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
         console.log("true");
         //document.getElementById("signupForm").submit();
-    }else {
+    } else {
         console.log("false");
     }
 }
