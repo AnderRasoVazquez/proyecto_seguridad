@@ -39,7 +39,7 @@ $conn->select_db($bd);
 $sql = "
 CREATE TABLE `articulo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(20) NOT NULL,
+  `titulo` varchar(200) NOT NULL,
   `contenido` text NOT NULL,
   `f_ult_mod` datetime DEFAULT NULL,
   `autor` varchar(20) NOT NULL,
@@ -63,7 +63,7 @@ execute_query($sql, "Creando tabla categorias",
 $sql = "
 CREATE TABLE `referencias` (
   `id_articulo` int(11) NOT NULL,
-  `referencia` varchar(20) NOT NULL,
+  `referencia` varchar(200) NOT NULL,
   PRIMARY KEY (`id_articulo`,`referencia`),
   FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`)
 ) DEFAULT CHARSET=utf8;

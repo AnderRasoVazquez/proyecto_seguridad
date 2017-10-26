@@ -1,6 +1,6 @@
-function convert_markdown() {
-    var text = document.getElementById('sourceTA').value,
-        target = document.getElementById('targetDiv'),
+function convert_markdown(theSource, theTarget) {
+    var text = document.getElementById(theSource).value,
+        target = document.getElementById(theTarget),
         converter = new showdown.Converter({
             tables: true,
             strikethrough: true,

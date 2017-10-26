@@ -17,7 +17,7 @@ include "includes/header.php";
         <input type="button" class="btn btn-sm btn-dark" onclick="add_tag()" value="+ Tag">
         <input type="button" class="btn btn-sm btn-dark" onclick="rm_tag()" value="- Tag">
         <legend>Text in Markdown format:</legend>
-        <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown()" form="form_post"></textarea>
+        <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown('sourceTA', 'targetDiv')" form="form_post"></textarea>
         <legend>References:</legend>
         <input class="form-control" type="text" name="references[]" value="">
         <div id="reference_container">

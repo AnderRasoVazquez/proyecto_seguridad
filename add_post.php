@@ -43,4 +43,7 @@ echo "Snippet successfully created =)";
 
 $conn->close();
 
+header("Location: show_snippet.php?id=". $last_id); /* Redirect browser */
+exit();
+
 ?>
