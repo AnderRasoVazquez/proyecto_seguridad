@@ -95,6 +95,7 @@ function checkPost() {
         console.log("campos nulos");
         window.alert("¡Ningún campo puede estar nulo!");
     } else {
+        document.getElementById("snippetSubmitButton").onclick = null;
         document.getElementById("form_post").submit();
     }
 }
