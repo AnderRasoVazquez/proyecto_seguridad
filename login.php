@@ -11,12 +11,13 @@ $res = $conn->query("select * from usuario where nombre='$name' and contraseña=
 
 if ($res == false) {
     //caso de error
+    exit();
 } elseif (mysqli_num_rows($res)!=0) {
     // resultado válido
     // se inicia la sesión
     session_start();
     // variables de sesión
-    $_SESSION["name"] = $name;
+    $_SESSION["currentUser"] = $name;
     // redirige a la página principal
     header("Location: index.php");
     exit();
@@ -24,6 +25,7 @@ if ($res == false) {
     // resultado no válido
     // devuelve a la página de login
     header("Location: formulario_login.php");
+    showLoginError();
     exit();
 }
 

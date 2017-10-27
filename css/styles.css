@@ -249,10 +249,6 @@ code {
     background-color: #343a40!important;
 }
 
-.logo {
-    float: left;
-}
-
 .nav_body {
     margin: 0;
     font-weight: 100;
@@ -305,6 +301,13 @@ nav a {
     text-transform: uppercase;
 }
 
+.logo-icon {
+    font-size: 30px;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+
 nav a:hover {
     color: #000;
     text-decoration: none;
@@ -312,6 +315,7 @@ nav a:hover {
 }
 
 .logo {
+    float: left;
     color: #FFF;
     font-size: 30px;
     text-transform: none;
