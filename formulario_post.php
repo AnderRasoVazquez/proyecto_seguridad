@@ -26,7 +26,7 @@ include "includes/header.php";
         <a class="btn btn-sm btn-dark" onclick="rm_reference()"><i class="material-icons">remove_circle</i></a>
         <br>
         <br>
-        <a class="btn btn-success" onclick="checkPost()"><i class="material-icons">cloud_upload</i> SUBMIT SNIPPET</a>
+        <a class="btn btn-success" id="snippetSubmitButton" onclick="checkPost()"><i class="material-icons">cloud_upload</i> SUBMIT SNIPPET</a>
     </div>
 </form>
 <div id="prev_panel">
