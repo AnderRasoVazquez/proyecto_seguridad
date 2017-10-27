@@ -1,12 +1,12 @@
 <div class="nav_body">
     <header class="nav_header bg-dark">
         <div class="nav_container">
-            <a href="index.php">
+            <!-- <a href="index.php">
                 <img src="img/logorandom.png" alt="logo" class="logo">
-            </a>
+            </a> -->
             <nav>
                 <ul class="nav_ul">
-                    <a href="index.php"><li>Home</li></a>
+                    <a href="index.php"><li class="no-padding logo"><i class="material-icons logo-icon">receipt</i>Snippedia</li></a>
                     <?php
                         session_start();
                         if (isset($_SESSION["currentUser"])) {
@@ -23,7 +23,7 @@
                 </ul>
                 <form id="nav_search" class="form-inline">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button  class="btn btn-info" type="submit">Search</button>
+                    <a  class="btn btn-info" type="submit"><i class="material-icons">search</i></a>
                 </form>
             </nav>
         </div>
