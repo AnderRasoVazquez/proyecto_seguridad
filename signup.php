@@ -21,8 +21,15 @@ if ($res == false) {
     exit();
 } elseif (mysqli_num_rows($res)==0) {
     // se registra al usuario en la base de datos
+<<<<<<< HEAD
     $sql = "INSERT INTO usuario
     VALUES('$dni','$name','$secondname','$phone','$birthdate','$email','$pass')";
+=======
+    // $sql = "INSERT INTO 'usuario'
+    // VALUES('$dni','$name','$secondname','$phone','$birthdate','$email','$pass')";
+    $sql = "INSERT INTO usuario (dni, nombre)
+    VALUES('$dni','$name')";
+>>>>>>> c73953a71ca640e1212429dd9f83f277b3fbfb0d
     $res = $conn->query($sql);
     if ($res) {
         // se inicia su sesión
