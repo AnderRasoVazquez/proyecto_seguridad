@@ -13,7 +13,7 @@
                 </ul>
                 <form id="nav_search" class="form-inline">
                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button  class="btn btn-info" type="submit">Search</button>
+                    <a  class="btn btn-info" type="submit"><i class="material-icons">search</i></a>
                 </form>
             </nav>
         </div>
