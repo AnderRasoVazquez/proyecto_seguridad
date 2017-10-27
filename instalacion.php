@@ -88,7 +88,7 @@ execute_query($sql, "Creando tabla usuario",
 
 $sql = "
 INSERT INTO `usuario` VALUES
-('11111111C','user1ñáéíóú','user1.1','111111111','1111-11-11','11111','1'),
+('11111111C','user1','user1.1','111111111','1111-11-11','11111','1'),
 ('22222222J','user2','user2.1','222222222','2222-02-02','22222','2');
 ";
 execute_query($sql, "Insertando entradas de prueba en la tabla usuario",

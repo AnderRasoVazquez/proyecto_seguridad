@@ -17,16 +17,20 @@ $res = $conn->query("select * from usuario where nombre='$dni'");
 
 if (mysqli_num_rows($res)==0) {
     //se registra al usuario en la base de datos
-    $sql = "
-    INSERT INTO 'usuario' VALUES
-    ('$dni','$name','$secondname','$phone','$birthdate','$email','$pass')";
-    $conn->query($sql);
+    $sql = "INSERT INTO usuario
+    VALUES ('$dni','$name','$secondname','$phone',3333-03-03,'$email','$pass')";
+    if($conn->query($sql) === TRUE){
+        $last_id = $conn->getLastId();
+    }else{
+        echo "Error: " . $sql . "<br>" . $conn->error;
+        exit();
+    }
     //se inicia su sesión
     session_start();
     //variables de sesión
     $_SESSION["currentUser"] = $name;
     // redirige a la página de login
-    header("Location: index.php");
+    //header("Location: index.php");
     exit();
 } elseif (mysqli_num_rows($res)!=0) {
     // resultado no válido
