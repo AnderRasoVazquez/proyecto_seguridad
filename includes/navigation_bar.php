@@ -1,12 +1,12 @@
 <div class="nav_body">
     <header class="nav_header bg-dark">
         <div class="nav_container">
-            <a href="index.php">
+            <!-- <a href="index.php">
                 <img src="img/logorandom.png" alt="logo" class="logo">
-            </a>
+            </a> -->
             <nav>
                 <ul class="nav_ul">
-                    <a href="index.php"><li>Home</li></a>
+                    <a href="index.php"><li class="no-padding logo">Snippedia</li></a>
                     <a href="formulario_login.php"><li>Login</li></a>
                     <a href="formulario_registro.php"><li>Sign up</li></a>
                     <a href="formulario_post.php"><li>Submit Snippet!</li></a>
