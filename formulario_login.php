@@ -1,7 +1,11 @@
-<title>Login - Snippedia</title>
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+if (isset($_SESSION["currentUser"])) {
+    // si ya hay una sessión iniciada
+    // la pagina de login redirige inmediatamente a index.php
+    header("Location: index.php");
+}
 ?>
     <h1>Log in to Snippedia</h1>
     <form action="login.php" method="post" id="loginForm">

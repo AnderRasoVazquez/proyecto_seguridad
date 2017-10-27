@@ -40,13 +40,15 @@ function checkLogin() {
     var pass = document.forms["loginForm"]["pass"].value;
     // Comprobar si los datos de los campos son válidos
     if (isNameCorrect(name) && isPassCorrect(pass)) {
-        console.log("true");
         document.getElementById("loginForm").submit();
     } else {
-        console.log("false");
-        document.getElementById("error").innerHTML =
-            "El nombre de usuario o contraseña no es válido."
+        showLoginError();
     }
+}
+
+function showLoginError() {
+    document.getElementById("error").innerHTML =
+        "El nombre de usuario o contraseña no es válido."
 }
 
 function isNameCorrect(pName) {
