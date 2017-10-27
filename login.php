@@ -7,7 +7,7 @@ require_once 'includes/DB/Conexion.php';
 $conn = new Conexion();
 $name = $_POST["name"];
 $pass = $_POST["pass"];
-$res = $conn->query("select * from usuario where nombre='$name' and contraseña='$pass'");
+$res = $conn->query("SELECT * FROM usuario WHERE nombre='$name' AND contraseña='$pass'");
 
 if ($res == false) {
     //caso de error
