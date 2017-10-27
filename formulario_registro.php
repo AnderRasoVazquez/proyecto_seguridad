@@ -8,12 +8,14 @@ include "includes/header.php";
 <h3>The best wiki for small developers!</h3>
 <h5>Create your account</h5>
 <form action="signup.php" method="post" id="signupForm">
+    <legend>DNI</legend>
+    <input class="form-control form-control-sm" type="text" name="dni">
     <legend>Name</legend>
     <input class="form-control form-control-sm" type="text" name="name">
     <legend>Second Name*</legend>
     <input class="form-control form-control-sm" type="text" name="secondname">
     <legend>Birth date</legend>
-    <input class="form-control form-control-sm" type="date" name="pass">
+    <input class="form-control form-control-sm" type="date" name="birthdate">
     <legend>Phone number*</legend>
     <input class="form-control form-control-sm" type="number" name="phone">
     <legend>Email address</legend>

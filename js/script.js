@@ -25,13 +25,14 @@ function checkSignup() {
     var email = document.forms["signupForm"]["email"].value;
     var phonenumber = document.forms["signupForm"]["phone"].value;
     var pass = document.forms["signupForm"]["pass"].value;
-    var name = document.forms["signupForm"]["pass2"].value;
+    var pass2 = document.forms["signupForm"]["pass2"].value;
     // Comprobar si los datos de los campos son válidos
-    if (isNameCorrect(name) && isPassCorrect(pass) && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
+    if (isNameCorrect(name) && isPassCorrect(pass) && pass==pass2 && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
         console.log("true");
-        //document.getElementById("signupForm").submit();
+        document.getElementById("signupForm").submit();
     } else {
         console.log("false");
+        console.log(birthdate);
     }
 }
 
