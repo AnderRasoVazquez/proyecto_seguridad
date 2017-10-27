@@ -19,7 +19,6 @@ function convert_markdown(theSource, theTarget) {
 }
 
 function checkSignup() {
-    console.log("HOLA");
     var name = document.forms["signupForm"]["name"].value;
     var birthdate = document.forms["signupForm"]["birthdate"].value;
     var email = document.forms["signupForm"]["email"].value;
@@ -28,10 +27,8 @@ function checkSignup() {
     var pass2 = document.forms["signupForm"]["pass2"].value;
     // Comprobar si los datos de los campos son válidos
     if (isNameCorrect(name) && isPassCorrect(pass) && pass==pass2 && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
-        console.log("true");
         document.getElementById("signupForm").submit();
     } else {
-        console.log("false");
         console.log(birthdate);
     }
 }

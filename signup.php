@@ -13,30 +13,35 @@ $birthdate = $_POST["birthdate"];
 $email = $_POST["email"];
 $pass = $_POST["pass"];
 
-$res = $conn->query("select * from usuario where nombre='$dni'");
+$res = $conn->query("SELECT * FROM usuario WHERE nombre='$dni'");
 
-if (mysqli_num_rows($res)==0) {
-    //se registra al usuario en la base de datos
-    $sql = "
-    INSERT INTO 'usuario' VALUES
-    ('$dni','$name','$secondname','$phone','$birthdate','$email','$pass')";
-    $conn->query($sql);
-    //se inicia su sesión
-    session_start();
-    //variables de sesión
-    $_SESSION["currentUser"] = $name;
-    // redirige a la página de login
-    header("Location: index.php");
+
+if ($res == false) {
+    // caso de error
     exit();
-} elseif (mysqli_num_rows($res)!=0) {
+} elseif (mysqli_num_rows($res)==0) {
+    // se registra al usuario en la base de datos
+    // $sql = "INSERT INTO 'usuario'
+    // VALUES('$dni','$name','$secondname','$phone','$birthdate','$email','$pass')";
+    $sql = "INSERT INTO usuario (dni, nombre)
+    VALUES('$dni','$name')";
+    $res = $conn->query($sql);
+    if ($res) {
+        // se inicia su sesión
+        session_start();
+        // variables de sesión
+        $_SESSION["currentUser"] = $name;
+        // redirige a la página de login
+        header("Location: index.php");
+        exit();
+    } else {
+        // erro al insertar datos
+        exit();
+    }
+} else {
     // resultado no válido
     // nombre de usuario ya está en uso
     // redirige a la página de login
-    header("Location: formulario_login.php");
-    exit();
-} else {
-    // caso de error
-    // devuelve a la página de login
     header("Location: formulario_login.php");
     exit();
 }
