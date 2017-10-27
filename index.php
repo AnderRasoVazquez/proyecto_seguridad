@@ -1,8 +1,3 @@
-<title>
-  Snippedia
-</title>
-<body>
-
   <?php
   // cabecera de la pagina
   include "includes/header.php";
@@ -44,10 +39,8 @@
 
   // texto relleno
   for ($i=0; $i < 50; $i++) {
-    echo "Soy una bonita línea de texto. (≧◡≦)<br>";
+      echo "Soy una bonita línea de texto. (≧◡≦)<br>";
   }
   // pie de pagina
   include "includes/footer.php";
   ?>
-
-</body>
