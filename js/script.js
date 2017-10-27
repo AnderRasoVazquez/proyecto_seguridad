@@ -29,7 +29,8 @@ function checkSignup() {
     if (isNameCorrect(name) && isPassCorrect(pass) && pass==pass2 && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
         document.getElementById("signupForm").submit();
     } else {
-        console.log(birthdate);
+        // notificar usuario errores
+
     }
 }
 
