@@ -19,6 +19,7 @@ function convert_markdown(theSource, theTarget) {
 }
 
 function checkSignup() {
+    var dni = document.forms["signupForm"]["dni"].value;
     var name = document.forms["signupForm"]["name"].value;
     var birthdate = document.forms["signupForm"]["birthdate"].value;
     var email = document.forms["signupForm"]["email"].value;
@@ -26,7 +27,7 @@ function checkSignup() {
     var pass = document.forms["signupForm"]["pass"].value;
     var pass2 = document.forms["signupForm"]["pass2"].value;
     // Comprobar si los datos de los campos son válidos
-    if (isNameCorrect(name) && isPassCorrect(pass) && pass==pass2 && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
+    if (isDniCorrect(dni) && isNameCorrect(name) && isPassCorrect(pass) && pass==pass2 && isEmailCorrect(email) && isBirthdateCorrect(birthdate)){
         document.getElementById("signupForm").submit();
     } else {
         // notificar usuario errores
