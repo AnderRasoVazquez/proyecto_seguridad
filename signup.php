@@ -13,7 +13,7 @@ $birthdate = $_POST["birthdate"];
 $email = $_POST["email"];
 $pass = $_POST["pass"];
 
-$res = $conn->query("SELECT * FROM usuario WHERE nombre='$dni'");
+$res = $conn->query("SELECT * FROM usuario WHERE dni='$dni'");
 
 if (mysqli_num_rows($res)==0) {
     //se registra al usuario en la base de datos
@@ -23,7 +23,8 @@ if (mysqli_num_rows($res)==0) {
         // se inicia su sesión
         session_start();
         // variables de sesión
-        $_SESSION["currentUser"] = $name;
+        $_SESSION["currentUser"] = $dni;
+        $_SESSION["currentUserName"] = $name;
         // redirige a la página de login
         header("Location: index.php");
         exit();

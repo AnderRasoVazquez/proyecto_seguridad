@@ -11,7 +11,7 @@
                         session_start();
                         if (isset($_SESSION["currentUser"])) {
                             // si hay sesión iniciada mostramos enlace al perfil
-                            $name = $_SESSION["currentUser"];
+                            $name = $_SESSION["currentUserName"];
                             echo("<a href='profile.php'><li>$name</li></a>");
                         } else {
                             // si no, mostramos enlace al login y al signup

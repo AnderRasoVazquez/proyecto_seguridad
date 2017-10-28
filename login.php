@@ -17,7 +17,8 @@ if ($res == false) {
     // se inicia la sesión
     session_start();
     // variables de sesión
-    $_SESSION["currentUser"] = $name;
+    $_SESSION["currentUser"] = $dni;
+    $_SESSION["currentUserName"] = $res->fetch_object()->nombre;
     // redirige a la página principal
     header("Location: index.php");
     exit();
