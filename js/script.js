@@ -50,24 +50,39 @@ function showLoginError() {
         "El nombre de usuario o contraseña no es válido."
 }
 
+function isDniCorrect(pDni) {
+    var success = false;
+    // condciones para que el DNI sea válido
+    // logitud de 9 caracteres (8 números + 1 letra)
+    if(pDni.length == 9) {
+        // obtenemos substring con los 8 números
+        var num = parseInt(pDni.substr(0, 8));
+        // obtenemos la letra
+        var letter = pDni.charAt(8);
+        // comprobamos si la letra es la correspondiente para el mod 23 del número
+        success = letter == getDniLetter(parseInt(num) % 23);
+    }
+    return success;
+}
+
 function isNameCorrect(pName) {
     var success = false;
     // condiciones para que el nombre de usuario sea válido
-    success = pName != "";
+    success = (pName.length > 0 && pName.length <=20);
     return success;
 }
 
 function isPassCorrect(pPass) {
     var success = false;
     // condiciones para que la contraseña sea válida
-    success = pPass != "";
+    success = (pPass.length > 0 && pPass.length <=20);
     return success;
 }
 
 function isEmailCorrect(pEmail) {
     var success = false;
     // condiciones para que el email sea válido
-    success = pEmail != "";
+    success = (pEmail.length > 0 && pEmail.length <=20);
     return success;
 }
 
@@ -134,4 +149,58 @@ function rm_reference() {
     var container = document.getElementById("reference_container")
     // Remove the container's last child
     container.removeChild(container.lastChild);
+}
+
+function getDniLetter(pRemainder) {
+    // devuelve la letra del DNI asociada al número (mod 23) dado
+    switch(pRemainder) {
+        case 0:
+            return "T";
+        case 1:
+            return "R";
+        case 2:
+            return "W";
+        case 3:
+            return "A";
+        case 4:
+            return "G";
+        case 5:
+            return "M";
+        case 6:
+            return "Y";
+        case 7:
+            return "F";
+        case 8:
+            return "P";
+        case 9:
+            return "D";
+        case 10:
+            return "X";
+        case 11:
+            return "B";
+        case 12:
+            return "N";
+        case 13:
+            return "J";
+        case 14:
+            return "Z";
+        case 15:
+            return "S";
+        case 16:
+            return "Q";
+        case 17:
+            return "V";
+        case 18:
+            return "H";
+        case 19:
+            return "L";
+        case 20:
+            return "C";
+        case 21:
+            return "K";
+        case 22:
+            return "E";
+        default:
+            return null;
+    }
 }
