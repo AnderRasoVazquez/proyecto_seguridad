@@ -5,9 +5,9 @@ include "includes/header.php";
 require_once 'includes/DB/Conexion.php';
 
 $conn = new Conexion();
-$name = $_POST["name"];
+$dni = $_POST["dni"];
 $pass = $_POST["pass"];
-$res = $conn->query("SELECT * FROM usuario WHERE nombre='$name' AND contraseña='$pass'");
+$res = $conn->query("SELECT * FROM usuario WHERE dni='$dni' AND contraseña='$pass'");
 
 if ($res == false) {
     //caso de error

@@ -35,10 +35,10 @@ function checkSignup() {
 }
 
 function checkLogin() {
-    var name = document.forms["loginForm"]["name"].value;
+    var dni = document.forms["loginForm"]["dni"].value;
     var pass = document.forms["loginForm"]["pass"].value;
     // Comprobar si los datos de los campos son válidos
-    if (isNameCorrect(name) && isPassCorrect(pass)) {
+    if (isDniCorrect(dni) && isPassCorrect(pass)) {
         document.getElementById("loginForm").submit();
     } else {
         showLoginError();
