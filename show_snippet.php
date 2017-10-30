@@ -17,20 +17,9 @@ $tag_res = $con->query($sql);
 
 $sql="SELECT * FROM referencias WHERE id_articulo=". $id ."";
 $ref_res = $con->query($sql);
-// CREATE TABLE `articulo` (
-//   `id` int(11) NOT NULL AUTO_INCREMENT,
-//   `titulo` varchar(20) NOT NULL,
-//   `contenido` text NOT NULL,
-//   `f_ult_mod` datetime DEFAULT NULL,
-//   `autor` varchar(20) NOT NULL,
-//   PRIMARY KEY (`id`)
-// ) DEFAULT CHARSET=utf8;
-
-// echo $row->autor . "\t" . $row->titulo . " " . $row->contenido . "<br>";
-// echo $row->f_ult_mod . "<br>";
 ?>
 
-<h1><?= $row->titulo ?></h1>
+<h1><?= $row->titulo ?><a class="btn btn-sm btn-primary" href="#"><i class='material-icons'>edit</i></a><a class="btn btn-sm btn-danger" href="#"><i class='material-icons'>delete</i></a></h1>
 <h4>by <?= $row->autor ?></h4>
 <h4>Last edit: <?= $row->f_ult_mod ?></h4>
 
