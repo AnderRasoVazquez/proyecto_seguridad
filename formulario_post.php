@@ -16,7 +16,7 @@ include "includes/header.php";
         </div>
         <a class="btn btn-sm btn-dark" onclick="add_tag()"><i class="material-icons">add_circle</i></a>
         <a class="btn btn-sm btn-dark" onclick="rm_tag()"><i class="material-icons">remove_circle</i></a>
-        <legend>Text in <a target="_blank" href="https://guides.github.com/features/mastering-markdown/">Markdown</a> format:</legend>
+        <legend>Text in <a target="_blank" href="index.php">Markdown</a> format:</legend>
         <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown('sourceTA', 'targetDiv')" form="form_post"></textarea>
         <legend>References:</legend>
         <input class="form-control" type="text" name="references[]" value="" maxlength="200">
