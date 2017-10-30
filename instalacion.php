@@ -74,11 +74,11 @@ execute_query($sql, "Creando tabla referencias",
 $sql = "
 CREATE TABLE `usuario` (
   `dni` varchar(9) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `apellidos` varchar(20) DEFAULT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `apellidos` varchar(30) DEFAULT NULL,
   `telefono` varchar(9) DEFAULT NULL,
   `f_nacimiento` date NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `hash` varchar(100) NOT NULL,
   PRIMARY KEY (`dni`)
 ) DEFAULT CHARSET=utf8;
