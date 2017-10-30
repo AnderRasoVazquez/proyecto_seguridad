@@ -42,7 +42,7 @@ CREATE TABLE `articulo` (
   `titulo` varchar(200) NOT NULL,
   `contenido` text NOT NULL,
   `f_ult_mod` datetime DEFAULT NULL,
-  `autor` varchar(20) NOT NULL,
+  `autor` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
 ";
