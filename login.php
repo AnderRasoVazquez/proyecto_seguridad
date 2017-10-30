@@ -10,14 +10,15 @@ $pass = $_POST["pass"];
 $res = $conn->query("SELECT * FROM usuario WHERE dni='$dni'");
 
 if (mysqli_num_rows($res)!=0) {
+    $row = $res->fetch_object();
     // usuario encontrado
-    if (password_verify($pass, $res->fetch_object()->hash)) {
+    if (password_verify($pass, $row->hash)) {
         // contraseña verificada
         // se inicia la sesión
         session_start();
         // variables de sesión
         $_SESSION["currentUser"] = $dni;
-        $_SESSION["currentUserName"] = $res->fetch_object()->nombre;
+        $_SESSION["currentUserName"] = $row->nombre;
         // redirige a la página principal
         $conn->close();
         header("Location: index.php");
