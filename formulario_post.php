@@ -7,11 +7,11 @@ include "includes/header.php";
 <form action="add_post.php" method="post" id="form_post">
     <div id="textinput">
         <legend>Title:</legend>
-        <input class="form-control" type="text" name="title" value="">
+        <input class="form-control" type="text" name="title" value="" maxlength="200">
         <legend>Author:</legend>
-        <input class="form-control form-control-sm" type="text" name="author" value="">
+        <input class="form-control form-control-sm" type="text" name="author" value="" maxlength="50">
         <legend>Tags:</legend>
-        <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="">
+        <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="" maxlength="20">
         <div id="tag_container">
         </div>
         <a class="btn btn-sm btn-dark" onclick="add_tag()"><i class="material-icons">add_circle</i></a>
@@ -19,7 +19,7 @@ include "includes/header.php";
         <legend>Text in Markdown format:</legend>
         <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown('sourceTA', 'targetDiv')" form="form_post"></textarea>
         <legend>References:</legend>
-        <input class="form-control" type="text" name="references[]" value="">
+        <input class="form-control" type="text" name="references[]" value="" maxlength="200">
         <div id="reference_container">
         </div>
         <a class="btn btn-sm btn-dark" onclick="add_reference()"><i class="material-icons">add_circle</i></a>
