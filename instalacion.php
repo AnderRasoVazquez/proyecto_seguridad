@@ -54,7 +54,7 @@ CREATE TABLE `categorias` (
   `id_articulo` int(11) NOT NULL,
   `categoria` varchar(20) NOT NULL,
   PRIMARY KEY (`id_articulo`,`categoria`),
-  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`)
+  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8;
 ";
 execute_query($sql, "Creando tabla categorias",
@@ -65,7 +65,7 @@ CREATE TABLE `referencias` (
   `id_articulo` int(11) NOT NULL,
   `referencia` varchar(200) NOT NULL,
   PRIMARY KEY (`id_articulo`,`referencia`),
-  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`)
+  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8;
 ";
 execute_query($sql, "Creando tabla referencias",
