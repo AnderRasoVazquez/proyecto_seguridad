@@ -19,6 +19,7 @@
                             echo("<a href='formulario_registro.php'><li>Sign up</li></a>");
                         }
                      ?>
+                    <a href="latest_snippets.php"><li>Latest Snippets</li></a>
                     <a href="formulario_post.php"><li>Submit Snippet!</li></a>
                 </ul>
                 <form id="nav_search" class="form-inline">
