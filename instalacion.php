@@ -42,7 +42,7 @@ CREATE TABLE `articulo` (
   `titulo` varchar(200) NOT NULL,
   `contenido` text NOT NULL,
   `f_ult_mod` datetime DEFAULT NULL,
-  `autor` varchar(20) NOT NULL,
+  `autor` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
 ";
@@ -54,7 +54,7 @@ CREATE TABLE `categorias` (
   `id_articulo` int(11) NOT NULL,
   `categoria` varchar(20) NOT NULL,
   PRIMARY KEY (`id_articulo`,`categoria`),
-  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`)
+  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8;
 ";
 execute_query($sql, "Creando tabla categorias",
@@ -65,7 +65,7 @@ CREATE TABLE `referencias` (
   `id_articulo` int(11) NOT NULL,
   `referencia` varchar(200) NOT NULL,
   PRIMARY KEY (`id_articulo`,`referencia`),
-  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`)
+  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8;
 ";
 execute_query($sql, "Creando tabla referencias",
@@ -74,22 +74,24 @@ execute_query($sql, "Creando tabla referencias",
 $sql = "
 CREATE TABLE `usuario` (
   `dni` varchar(9) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `apellidos` varchar(20) DEFAULT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `apellidos` varchar(30) DEFAULT NULL,
   `telefono` varchar(9) DEFAULT NULL,
   `f_nacimiento` date NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `contraseña` varchar(300) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `hash` varchar(100) NOT NULL,
   PRIMARY KEY (`dni`)
 ) DEFAULT CHARSET=utf8;
 ";
 execute_query($sql, "Creando tabla usuario",
                     "Error al intentar crear la tabla usuario");
 
+$hash1 = '$2y$10$HWlS7Zepe.4nyDkYsGvPIeYIc4SIChwjae0aZzo8WglYfZdJH/npC';
+$hash2 = '$2y$10$Z3I.djliaLK6VGda2ECo/.ateRlmib1lnDT9HvWTTGZnX1eK12X26';
 $sql = "
 INSERT INTO `usuario` VALUES
-('11111111H','user1','user1.1','111111111','1111-11-11','11111','1'),
-('22222222J','user2','user2.1','222222222','2222-02-02','22222','2');
+('11111111H','user1','user1.1','111111111','1111-11-11','11111','$hash1'),
+('22222222J','user2','user2.1','222222222','2222-02-02','22222','$hash2');
 ";
 execute_query($sql, "Insertando entradas de prueba en la tabla usuario",
                     "Error al intentar insertar entradas en la tabla usuario");

@@ -17,8 +17,9 @@ $res = $conn->query("SELECT * FROM usuario WHERE dni='$dni'");
 
 if (mysqli_num_rows($res)==0) {
     //se registra al usuario en la base de datos
+    $hash = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuario
-    VALUES ('$dni','$name','$secondname','$phone',$birthdate,'$email','$pass')";
+    VALUES ('$dni','$name','$secondname','$phone',$birthdate,'$email','$hash')";
     if($conn->query($sql)){
         // se inicia su sesión
         session_start();

@@ -9,21 +9,21 @@ include "includes/header.php";
 <h5>Create your account</h5>
 <form action="signup.php" method="post" id="signupForm">
     <legend>DNI</legend>
-    <input class="form-control form-control-sm" type="text" name="dni">
+    <input class="form-control form-control-sm" type="text" name="dni" maxlength="9">
     <legend>Name</legend>
-    <input class="form-control form-control-sm" type="text" name="name">
+    <input class="form-control form-control-sm" type="text" name="name" maxlength="30">
     <legend>Second Name*</legend>
-    <input class="form-control form-control-sm" type="text" name="secondname">
+    <input class="form-control form-control-sm" type="text" name="secondname" maxlength="30">
     <legend>Birth date</legend>
     <input class="form-control form-control-sm" type="date" name="birthdate">
     <legend>Phone number*</legend>
-    <input class="form-control form-control-sm" type="number" name="phone">
+    <input class="form-control form-control-sm" type="number" name="phone" maxlength="9">
     <legend>Email address</legend>
-    <input class="form-control form-control-sm" type="email" name="email">
+    <input class="form-control form-control-sm" type="email" name="email" maxlength="30">
     <legend>Password</legend>
-    <input class="form-control form-control-sm" type="password" name="pass">
+    <input class="form-control form-control-sm" type="password" name="pass" maxlength="20">
     <legend>Repeat your password</legend>
-    <input class="form-control form-control-sm" type="password" name="pass2">
+    <input class="form-control form-control-sm" type="password" name="pass2" maxlength="20">
 
     <br><i>The fields marked with * are optional.</i><br><br>
 
