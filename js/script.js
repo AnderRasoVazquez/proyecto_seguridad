@@ -52,16 +52,30 @@ function showLoginError() {
 }
 
 function isDniCorrect(pDni) {
+    /*
+    código de
+    https://donnierock.com/2011/11/05/validar-un-dni-con-javascript/
+    */
     var success = false;
-    // condciones para que el DNI sea válido
-    // logitud de 9 caracteres (8 números + 1 letra)
-    if(pDni.length == 9) {
-        // obtenemos substring con los 8 números
-        var num = parseInt(pDni.substr(0, 8));
+    var expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+
+    if (expresion_regular_dni.test (pDni) == true) {
+        // el dni tiene la estructura correcta (8 números + 1 letra)
+        // obtenemos la parte númerica
+        var num = pDni.substr(0,pDni.length-1);
+        // obtenemos el módulo 23 del número
+        num = num % 23;
         // obtenemos la letra
-        var letter = pDni.charAt(8);
-        // comprobamos si la letra es la correspondiente para el mod 23 del número
-        success = letter == getDniLetter(parseInt(num) % 23);
+        var letter = pDni.substr(pDni.length-1,1);
+        var dni_letters='TRWAGMYFPDXBNJZSQVHLCKET';
+        if (letter.toUpperCase() == dni_letters.charAt(num)) {
+            // la letra es la que debería ser
+            success = true;
+        } else {
+            success = false;
+        }
+    } else {
+        success = false;
     }
     return success;
 }
@@ -149,34 +163,4 @@ function rm_reference() {
     var container = document.getElementById("reference_container")
     // Remove the container's last child
     container.removeChild(container.lastChild);
-}
-
-function getDniLetter(pRemainder) {
-    // devuelve la letra del DNI asociada al número (mod 23) dado
-    var letraDni = {
-        0: "T",
-        1: "R",
-        2: "W",
-        3: "A",
-        4: "G",
-        5: "M",
-        6: "Y",
-        7: "F",
-        8: "P",
-        9: "D",
-        10: "X",
-        11: "B",
-        12: "N",
-        13: "J",
-        14: "Z",
-        15: "S",
-        16: "Q",
-        17: "V",
-        18: "H",
-        19: "L",
-        20: "C",
-        21: "K",
-        22: "E",
-    }
-    return letraDni[pRemainder];
 }
