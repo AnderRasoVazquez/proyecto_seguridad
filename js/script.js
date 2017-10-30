@@ -69,21 +69,21 @@ function isDniCorrect(pDni) {
 function isNameCorrect(pName) {
     var success = false;
     // condiciones para que el nombre de usuario sea válido
-    success = (pName.length > 0 && pName.length <=20);
+    success = pName != "";
     return success;
 }
 
 function isPassCorrect(pPass) {
     var success = false;
     // condiciones para que la contraseña sea válida
-    success = (pPass.length > 0 && pPass.length <=20);
+    success = pPass != "";
     return success;
 }
 
 function isEmailCorrect(pEmail) {
     var success = false;
     // condiciones para que el email sea válido
-    success = (pEmail.length > 0 && pEmail.length <=20);
+    success = pEmail != "";
     return success;
 }
 
@@ -107,7 +107,6 @@ function checkPost() {
         author == "" ||
         tag == "" ||
         content == "") {
-        console.log("campos nulos");
         window.alert("¡Ningún campo puede estar nulo!");
     } else {
         document.getElementById("snippetSubmitButton").onclick = null;
