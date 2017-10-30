@@ -64,9 +64,6 @@ legend {
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     border: 1px solid transparent;
     padding: .375rem .75rem;
@@ -82,11 +79,14 @@ legend {
 }
 
 .btn-sm {
-    margin-top: 5px;
     padding: .25rem .5rem;
     font-size: .875rem;
     line-height: 1.5;
     border-radius: .2rem;
+}
+
+div#textinput>a.btn-sm {
+    margin-top: 5px;
 }
 
 .btn-success {
@@ -325,4 +325,14 @@ nav a:hover {
     /*border-radius: 20px;*/
     margin: 0;
     padding: 17;
+}
+
+/*los a dentro de h1 que tengan la clase .btn-sm*/
+h1>a.btn-sm {
+    margin-left: 10px;
+}
+
+/*el ultimo de los a dentro de h1 que tengan la clase .btn-sm*/
+h1>a.btn-sm:last-child {
+    margin-left: 5px;
 }
