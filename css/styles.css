@@ -215,6 +215,7 @@ h1>a.btn-sm:last-child {
     margin-top: 100px;
     margin-left: 20px;
     margin-right: 20px;
+    line-height: 1.5em;
 }
 
 a {
@@ -335,4 +336,75 @@ nav a:hover {
     /*border-radius: 20px;*/
     margin: 0;
     padding: 17;
+}
+
+/* Estilos para las pestañas de la pagina de inicio*/
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    /*border: 1px solid #ccc;*/
+    /*background-color: #f1f1f1;*/
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: #4183c4;
+    font-weight: bold;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    /*background-color: #ccc;*/
+    /*padding: 2px 12px 4px 12px;*/
+    color: #fff;
+    background: #4183C4;
+    border-radius: 20px;
+}
+
+/* Style the tab content */
+.tabcontent {
+    margin-top: 20px;
+    max-width: 900px;
+    display: none;
+    border: 1px solid #ccc;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.markdown-text {
+    padding: 20px 20px;
+    line-height: 1.5em;
+    border-bottom: 1px solid #ccc;
+    background: #F8F8F8;
+    /*white-space: pre-wrap;*/
+}
+
+.markdown-preview {
+    line-height: 1.5em;
+    padding: 20px 20px;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+img {
+    max-width: 100%;
 }
