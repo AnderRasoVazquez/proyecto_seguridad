@@ -18,7 +18,7 @@ include "includes/header.php";
 <h2>Snippet making tutorial</h2>
 
 <p>
-    Use Markdown syntax to make beautifully formated Snippets.
+    Use Markdown syntax to make beautifully formatted Snippets.
 </p>
 
 <div class="tab">
