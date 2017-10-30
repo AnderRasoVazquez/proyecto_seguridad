@@ -4,7 +4,7 @@
  *
  * sql: debe pedir de la tabla articulo -> f_ult_mod, titulo, id
  */
-function CreateTable($sql)
+function CreateSnippetTable($sql)
 {
     require_once("includes/DB/Conexion.php");
     $conn = new Conexion();
