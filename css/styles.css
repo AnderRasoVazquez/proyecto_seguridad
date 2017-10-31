@@ -156,6 +156,11 @@ h1>a.btn-sm:last-child {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+input.form-control:disabled {
+    background: #F0F0F0;
+}
+
+
 .form-control-sm {
     width: 250px;
 }

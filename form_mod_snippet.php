@@ -33,7 +33,7 @@ $rowReferencia = $resReferencia->fetch_object();
         <legend>Title:</legend>
         <input class="form-control" type="text" name="title" value="<?=$row->titulo?>" maxlength="200">
         <legend>Author:</legend>
-        <input class="form-control form-control-sm" type="text" name="author" value="<?=$row->autor?>" maxlength="50">
+        <input class="form-control form-control-sm" type="text" name="author" value="<?=$row->autor?>" disabled maxlength="50">
         <legend>Tags:</legend>
         <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="<?=$rowTag->categoria?>" maxlength="20">
         <div id="tag_container">
