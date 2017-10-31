@@ -51,12 +51,15 @@ CREATE TABLE `usuario` (
 execute_query($sql, "Creando tabla usuario",
                     "Error al intentar crear la tabla usuario");
 
+// contraseña: anonimo
 $hash0 = '$2y$10$1gCiGeiblybH1tO3zfNs1O.2dhdLDiinB0aZvUx/ArZv5jWgSy1lu';
+// contraseña: 1
 $hash1 = '$2y$10$HWlS7Zepe.4nyDkYsGvPIeYIc4SIChwjae0aZzo8WglYfZdJH/npC';
+// contraseña: 2
 $hash2 = '$2y$10$Z3I.djliaLK6VGda2ECo/.ateRlmib1lnDT9HvWTTGZnX1eK12X26';
 $sql = "
 INSERT INTO `usuario` VALUES
-('anonimo','Anónimo','Anonimato','000000000','1900-01-01','anonimo@ikales.ehu.eus','$hash0'),
+('anonimo','Anónimo','','','','',''),
 ('11111111H','user1','user1.1','111111111','1111-11-11','user1@ikales.ehu.eus','$hash1'),
 ('22222222J','user2','user2.1','222222222','2222-02-02','user2@ikales.ehu.eus','$hash2');
 ";
