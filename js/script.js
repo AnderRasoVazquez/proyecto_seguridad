@@ -152,7 +152,23 @@ function checkPost() {
     var author = document.forms["form_post"]["author"].value;
     var content = document.getElementById("sourceTA").value;
     var tag = document.getElementById("tag").value;
-    // TODO comprobar todos los tags
+
+    var tags = document.querySelectorAll("tag");
+    var processedTags = [];
+    for (var t in tags) {
+        processedTags.push(t.toLowerCase());
+    }
+    var processedTags = processedTags.sort();
+//     function hasDuplicates(array) {
+//     return (new Set(array)).size !== array.length;
+// }
+    console.log(processedTags);
+
+    if ((new Set(processedTags)).size !== processedTags.length) {
+        console.log("dups");
+    }else{
+        console.log("not dups");
+    }
     if (title == "" ||
         author == "" ||
         tag == "" ||
@@ -160,8 +176,14 @@ function checkPost() {
         window.alert("¡Ningún campo puede estar nulo!");
     } else {
         document.getElementById("snippetSubmitButton").onclick = null;
-        document.getElementById("form_post").submit();
+        // document.getElementById("form_post").submit();
+        window.alert("enviando");
     }
+
+    // TODO comprobar que ni los tags ni las refs estén repetidas
+    // console.log(tagContainer);
+    // console.log("----------------");
+    // console.log(tagContainer.getElementById("tag"));
 }
 
 function checkEdit() {
