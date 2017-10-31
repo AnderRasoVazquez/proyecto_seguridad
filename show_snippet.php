@@ -19,7 +19,7 @@ $sql="SELECT * FROM referencias WHERE id_articulo=". $id ."";
 $ref_res = $con->query($sql);
 ?>
 
-<h1><?= $row->titulo ?><a class="btn btn-sm btn-primary" href="#"><i class='material-icons'>edit</i></a><a class="btn btn-sm btn-danger" onclick="return confirm('Delete Snippet?')" href="del_snippet.php?id=<?=$id?>"><i class='material-icons'>delete</i></a></h1>
+<h1><?= $row->titulo ?><a class="btn btn-sm btn-primary" href="form_mod_snippet.php?id=<?=$id?>"><i class='material-icons'>edit</i></a><a class="btn btn-sm btn-danger" onclick="return confirm('Delete Snippet?')" href="del_snippet.php?id=<?=$id?>"><i class='material-icons'>delete</i></a></h1>
 <h4>by <?= $row->autor ?></h4>
 <h4>Last edit: <?= $row->f_ult_mod ?></h4>
 
