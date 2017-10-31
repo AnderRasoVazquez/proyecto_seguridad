@@ -15,9 +15,12 @@ if ($search) {
 // es como usar * en un regex
 $sql = "SELECT DISTINCT f_ult_mod, titulo, id, autor FROM articulo
         JOIN categorias ON articulo.id = categorias.id_articulo
+        JOIN usuario ON articulo.autor = usuario.dni
         WHERE categorias.categoria LIKE '%". $search ."%'
         OR articulo.titulo LIKE '%". $search ."%'
-        OR articulo.autor = '$search'
+        OR usuario.nombre = '$search'
+        OR usuario.apellidos = '$search'
+        OR CONCAT(usuario.nombre, ' ', usuario.apellidos) = '$search'
         ORDER BY f_ult_mod DESC
         ";
 
