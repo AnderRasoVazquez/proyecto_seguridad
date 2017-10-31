@@ -149,7 +149,7 @@ function isBirthdateCorrect(pBirthdate) {
 
 function checkPost() {
     var title = document.forms["form_post"]["title"].value;
-    var author = document.forms["form_post"]["author"].value;
+    var author = document.getElementById("author").value;
     var content = document.getElementById("sourceTA").value;
     var tag = document.getElementById("tag").value;
 

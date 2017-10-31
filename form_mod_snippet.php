@@ -1,6 +1,7 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+include "includes/utilidades.php";
 require_once("includes/DB/Conexion.php");
 $con = new Conexion();
 
@@ -17,23 +18,17 @@ $rowTag = $resTag->fetch_object();
 $sql="SELECT * FROM referencias WHERE id_articulo=". $id ."";
 $resReferencia = $con->query($sql);
 $rowReferencia = $resReferencia->fetch_object();
-
-
-// TODO
-// Para ir añadiendo los tags, una opción sería añadir el primero
-// y después en javascript hacer click en el botón y coger el last child,
-// añadir el tag ahí
-
 ?>
 
 <h1>Modify Snippet</h1>
 <form action="mod_snippet.php" method="post" id="form_post">
-    <input type="hidden" value="<?=$id?>" name="id" />
+    <input type="hidden" value="<?=$id?>" name="id" readonly/>
+    <input type="hidden" id="author" value="<?=$row->autor?>" name="author" readonly/>
     <div id="textinput">
         <legend>Title:</legend>
         <input class="form-control" type="text" name="title" value="<?=$row->titulo?>" maxlength="200">
         <legend>Author:</legend>
-        <input class="form-control form-control-sm" type="text" name="author" value="<?=$row->autor?>" disabled maxlength="50">
+        <input class="form-control form-control-sm" type="text" value="<?=getFullNameOf($row->autor)?>" disabled maxlength="50">
         <legend>Tags:</legend>
         <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="<?=$rowTag->categoria?>" maxlength="20">
         <div id="tag_container">

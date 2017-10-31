@@ -15,7 +15,7 @@ if (isset($_SESSION["currentUser"])) {
         <legend>Title:</legend>
         <input class="form-control" type="text" name="title" value="" maxlength="200">
         <legend>Author:</legend>
-        <input class="form-control form-control-sm" type="text" name="author" value="<?=$full_name?>" maxlength="50" disabled>
+        <input class="form-control form-control-sm" id="author" type="text" name="author" value="<?=$full_name?>" maxlength="50" disabled>
         <legend>Tags:</legend>
         <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="" maxlength="20">
         <div id="tag_container">
