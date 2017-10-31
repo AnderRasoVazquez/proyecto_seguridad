@@ -1,6 +1,7 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+include "includes/utilidades.php";
 
 require_once 'includes/DB/Conexion.php';
 
@@ -20,10 +21,7 @@ if (!$res) {
     if (password_verify($pass, $row->hash)) {
         // contraseña verificada
         // se inicia la sesión
-        session_start();
-        // variables de sesión
-        $_SESSION["currentUser"] = $dni;
-        $_SESSION["currentUserName"] = $row->nombre;
+        createSession($dni, $row->nombre);
         // redirige a la página principal
         $conn->close();
         header("Location: index.php");
