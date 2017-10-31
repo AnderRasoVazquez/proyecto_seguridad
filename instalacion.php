@@ -56,7 +56,7 @@ $hash1 = '$2y$10$HWlS7Zepe.4nyDkYsGvPIeYIc4SIChwjae0aZzo8WglYfZdJH/npC';
 $hash2 = '$2y$10$Z3I.djliaLK6VGda2ECo/.ateRlmib1lnDT9HvWTTGZnX1eK12X26';
 $sql = "
 INSERT INTO `usuario` VALUES
-('anonimo','anónimo','anonimato','000000000','1900-01-01','anonimo@ikales.ehu.eus','$hash0'),
+('anonimo','Anónimo','Anonimato','000000000','1900-01-01','anonimo@ikales.ehu.eus','$hash0'),
 ('11111111H','user1','user1.1','111111111','1111-11-11','user1@ikales.ehu.eus','$hash1'),
 ('22222222J','user2','user2.1','222222222','2222-02-02','user2@ikales.ehu.eus','$hash2');
 ";
