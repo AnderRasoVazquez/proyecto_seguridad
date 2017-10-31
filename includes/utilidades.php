@@ -35,11 +35,12 @@ function CreateSnippetTable($sql)
     $conn->close();
 }
 
-function createSession($pDni, $pName) {
+function createSession($pDni, $pName, $pSecondName) {
     session_start();
     // variables de sesión
     $_SESSION["currentUser"] = $pDni;
     $_SESSION["currentUserName"] = $pName;
+    $_SESSION["currentUserSecondName"] = $pSecondName;
 }
 
 function endSession() {

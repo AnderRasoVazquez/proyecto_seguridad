@@ -26,7 +26,7 @@ if (mysqli_num_rows($res)==0) {
     '".$conn->escape_string($hash)."')";
     if($conn->query($sql)){
         // se inicia su sesión
-        createSession($dni, $name);
+        createSession($dni, $name, $secondname);
         // redirige a la página de login
         header("Location: index.php");
         exit();

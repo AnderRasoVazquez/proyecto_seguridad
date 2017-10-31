@@ -21,7 +21,7 @@ if (!$res) {
     if (password_verify($pass, $row->hash)) {
         // contraseña verificada
         // se inicia la sesión
-        createSession($dni, $row->nombre);
+        createSession($dni, $row->nombre, $row->apellidos);
         // redirige a la página principal
         $conn->close();
         header("Location: index.php");
