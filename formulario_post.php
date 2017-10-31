@@ -25,7 +25,7 @@ if (isset($_SESSION["currentUser"])) {
         <legend>Text in <a target="_blank" href="index.php">Markdown</a> format:</legend>
         <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown('sourceTA', 'targetDiv')" form="form_post"></textarea>
         <legend>References:</legend>
-        <input class="form-control" type="text" name="references[]" value="" maxlength="200">
+        <input class="form-control" type="text" name="references[]" id="ref" value="" maxlength="200">
         <div id="reference_container">
         </div>
         <a class="btn btn-sm btn-dark" onclick="add_reference()"><i class="material-icons">add_circle</i></a>

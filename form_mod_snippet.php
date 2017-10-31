@@ -43,7 +43,7 @@ $rowReferencia = $resReferencia->fetch_object();
         <legend>Text in <a target="_blank" href="index.php">Markdown</a> format:</legend>
         <textarea id="sourceTA" class="form-control" name="content" oninput="convert_markdown('sourceTA', 'targetDiv')" form="form_post"><?=$row->contenido?></textarea>
         <legend>References:</legend>
-        <input class="form-control" type="text" name="references[]" value="<?=$rowReferencia->referencia?>" maxlength="200">
+        <input class="form-control" type="text" id="ref" name="references[]" value="<?=$rowReferencia->referencia?>" maxlength="200">
         <div id="reference_container">
         </div>
         <a id="btnAddRef" class="btn btn-sm btn-dark" onclick="add_reference()"><i class="material-icons">add_circle</i></a>

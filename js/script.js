@@ -149,43 +149,62 @@ function isBirthdateCorrect(pBirthdate) {
 
 function checkPost() {
     var title = document.forms["form_post"]["title"].value;
+    var author = document.forms["form_post"]["author"].value;
     var content = document.getElementById("sourceTA").value;
     var tag = document.getElementById("tag").value;
 
-    var tags = document.querySelectorAll("tag");
-    var processedTags = [];
-    for (var t in tags) {
-        processedTags.push(t.toLowerCase());
-    }
-    var processedTags = processedTags.sort();
-//     function hasDuplicates(array) {
-//     return (new Set(array)).size !== array.length;
-// }
-    console.log(processedTags);
+    var processedTags = arrayFromId("#tag");
+    var processedRefs = arrayFromId("#ref");
 
-    if ((new Set(processedTags)).size !== processedTags.length) {
-        console.log("dups");
-    }else{
-        console.log("not dups");
-    }
     if (title == "" ||
+        author == "" ||
         tag == "" ||
-        content == "") {
-        window.alert("¡Ningún campo puede estar nulo!");
+        content == "" ||
+        hasBlanks(processedTags) ||
+        invalidRefs(processedRefs)) {
+        window.alert("Fields can't be blank!");
+    } else if (hasDuplicates(processedTags)) {
+        window.alert("Tags can't have the same value!");
+    } else if (hasDuplicates(processedRefs)) {
+        window.alert("Referencies can't have the same value!");
     } else {
         document.getElementById("snippetSubmitButton").onclick = null;
-        // document.getElementById("form_post").submit();
-        window.alert("enviando");
+        document.getElementById("form_post").submit();
     }
-
-    // TODO comprobar que ni los tags ni las refs estén repetidas
-    // console.log(tagContainer);
-    // console.log("----------------");
-    // console.log(tagContainer.getElementById("tag"));
 }
 
-function checkEdit() {
+/*
+Código extraido de la respuesta de "Ivan Krechetov" en:
+//https://stackoverflow.com/questions/7376598/in-javascript-how-do-i-check-if-an-array-has-duplicate-values
+*/
+function hasDuplicates(array) {
+    return (new Set(array)).size !== array.length;
+}
 
+function hasBlanks(array){
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === "") {
+            return true;
+        }
+    }
+    return false;
+}
+
+function invalidRefs(refs){
+    if (refs.length == 1) {
+        return false;
+    } else {
+        return hasBlanks(refs);
+    }
+}
+
+function arrayFromId(ref){
+    var refs = document.querySelectorAll(ref);
+    var processedRefs = [];
+    for (var i = 0; i < refs.length; i++) {
+        processedRefs.push(refs[i].value.toLowerCase());
+    }
+    return processedRefs.sort();
 }
 
 function add_tag() {
@@ -209,6 +228,7 @@ function add_reference() {
     var container = document.getElementById("reference_container")
     // Create an <input> element, set its type and name attributes
     var input = document.createElement("input");
+    input.id = "ref";
     input.type = "text";
     input.name = "references[]";
     input.className += " form-control";
