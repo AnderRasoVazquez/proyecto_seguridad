@@ -13,10 +13,11 @@ if ($search) {
 
 // "% Matches any number of characters, even zero characters"
 // es como usar * en un regex
-$sql = "SELECT DISTINCT f_ult_mod, titulo, id FROM articulo
+$sql = "SELECT DISTINCT f_ult_mod, titulo, id, autor FROM articulo
         JOIN categorias ON articulo.id = categorias.id_articulo
         WHERE categorias.categoria LIKE '%". $search ."%'
         OR articulo.titulo LIKE '%". $search ."%'
+        OR articulo.autor = '$search'
         ORDER BY f_ult_mod DESC
         ";
 
