@@ -35,7 +35,7 @@ $ref_res = $con->query($sql);
     <li><b>Tags:</b></li>
     <?php
     while($tag = $tag_res->fetch_object()) {
-        echo "<li><a href='#'><i class='material-icons'>label_outline</i>". $tag->categoria ."</a></li>";
+        echo "<li><a href='snippets_by_tag.php?tag=". $tag->categoria ."'><i class='material-icons'>label_outline</i>". $tag->categoria ."</a></li>";
     }
      ?>
 </ul>
