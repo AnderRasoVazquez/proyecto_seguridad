@@ -3,7 +3,7 @@
 include "includes/header.php";
 require_once "includes/utilidades.php";
 
-$search = $_POST['search_term'];
+$search = $_GET['search_term'];
 
 if ($search) {
     echo "<h1>Snippets with search term \"". $search ."\" on title or on tag</h1>";
