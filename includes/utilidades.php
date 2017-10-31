@@ -25,9 +25,10 @@ function CreateSnippetTable($sql)
         </thead>
         <tbody>";
                 while ($row = $res->fetch_object()) {
+                    $full_name = getFullNameOf($row->autor);
                     echo "<tr>";
                     echo "<td><a href='show_snippet.php?id=". $row->id ."'>". $row->titulo . "</a></td>";
-                    echo "<td>". $row->autor . "</td>";
+                    echo "<td><a href='search_snippet.php?search_term=". $full_name ."'>". $full_name ."</a></td>";
                     echo "<td>". $row->f_ult_mod . "</td>";
                     echo "</tr>";
                 }
