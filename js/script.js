@@ -127,8 +127,13 @@ function isPassCorrect(pPass) {
 
 function isEmailCorrect(pEmail) {
     var success = false;
+    /*
+    Código extraido de la respuesta de "sectrean" en:
+    https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript
+    */
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     // condiciones para que el email sea válido
-    success = pEmail != "";
+    success = re.test(pEmail);
     return success;
 }
 

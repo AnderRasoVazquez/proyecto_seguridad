@@ -19,6 +19,7 @@ function CreateSnippetTable($sql)
         <thead>
             <tr>
                 <th>Title</th>
+                <th>Created by</th>
                 <th>Last Modified</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@ function CreateSnippetTable($sql)
                 while ($row = $res->fetch_object()) {
                     echo "<tr>";
                     echo "<td><a href='show_snippet.php?id=". $row->id ."'>". $row->titulo . "</a></td>";
+                    echo "<td>". $row->autor . "</td>";
                     echo "<td>". $row->f_ult_mod . "</td>";
                     echo "</tr>";
                 }
