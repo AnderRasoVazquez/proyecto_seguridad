@@ -7,7 +7,8 @@ require_once 'includes/DB/Conexion.php';
 $conn = new Conexion();
 $dni = $_POST["dni"];
 $pass = $_POST["pass"];
-$res = $conn->query("SELECT * FROM usuario WHERE dni='".$conn->escape_string($dni)."'");
+$sql = "SELECT * FROM usuario WHERE dni='".$conn->escape_string($dni)."'";
+$res = $conn->query($sql);
 
 
 if (!$res) {
