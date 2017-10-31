@@ -31,7 +31,38 @@ function checkSignup() {
         document.getElementById("signupForm").submit();
     } else {
         // notificar usuario errores
+        if (!isDniCorrect(dni)){
+            document.forms["signupForm"]["dni"].classList.add("form-control-error");
+        }else{
+            document.forms["signupForm"]["dni"].classList.remove("form-control-error");
+        }
 
+        if (!isNameCorrect(name)){
+            document.forms["signupForm"]["name"].classList.add("form-control-error");
+        }else{
+            document.forms["signupForm"]["name"].classList.remove("form-control-error");
+        }
+
+        if (!isPassCorrect(pass)){
+            document.forms["signupForm"]["pass"].classList.add("form-control-error");
+        }else if (pass!=pass2){
+            document.forms["signupForm"]["pass2"].classList.add("form-control-error");
+            document.forms["signupForm"]["pass"].classList.remove("form-control-error");
+        }else{
+            document.forms["signupForm"]["pass2"].classList.remove("form-control-error");
+        }
+
+        if (!isEmailCorrect(email)){
+            document.forms["signupForm"]["email"].classList.add("form-control-error");
+        }else{
+            document.forms["signupForm"]["email"].classList.remove("form-control-error");
+        }
+
+        if (!isBirthdateCorrect(birthdate)){
+            document.forms["signupForm"]["birthdate"].classList.add("form-control-error");
+        }else{
+            document.forms["signupForm"]["birthdate"].classList.remove("form-control-error");
+        }
     }
 }
 
