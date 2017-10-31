@@ -34,4 +34,13 @@ function CreateSnippetTable($sql)
     </table>";
     $conn->close();
 }
+
+function correctApostrophes($pString) {
+    $string = $pString;
+    $pos = -2;
+    while($pos = strpos($string, "'", $ pos+2)) {
+        $string = substr_replace($string, "'", $pos, 0);
+    }
+    return $string;
+}
 ?>

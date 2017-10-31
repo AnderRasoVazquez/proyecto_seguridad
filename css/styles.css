@@ -160,6 +160,11 @@ h1>a.btn-sm:last-child {
     width: 250px;
 }
 
+.form-control-error{
+    background-color: #ffbebe;
+    border: 2px solid #ff0000;
+}
+
 .hidden {
     display: none;
 }
