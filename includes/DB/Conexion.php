@@ -158,4 +158,9 @@ class Conexion
     {
         return $this->connection->insert_id;
     }
+
+    public function escape_string($the_string)
+    {
+        return $this->connection->escape_string($the_string);
+    }
 }

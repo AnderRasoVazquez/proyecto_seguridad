@@ -12,7 +12,7 @@ $references = $_POST["references"];
 $f_ult_mod = date('Y/m/d H:i:s');
 
 $sql = "INSERT INTO articulo (titulo, contenido, autor, f_ult_mod)
-VALUES ('". $title ."', '". $content ."', '". $author ."', '". $f_ult_mod ."')";
+VALUES ('". $conn->escape_string($title) ."', '". $conn->escape_string($content) ."', '". $conn->escape_string($author) ."', '". $conn->escape_string($f_ult_mod) ."')";
 if ($conn->query($sql) === TRUE) {
     $last_id = $conn->getLastId();
 } else {
@@ -22,7 +22,7 @@ if ($conn->query($sql) === TRUE) {
 
 foreach ($tags as $tag) {
     $sql = "INSERT INTO categorias (id_articulo, categoria)
-    VALUES ('". $last_id ."', '". $tag ."')";
+    VALUES ('". $conn->escape_string($last_id) ."', '". $conn->escape_string($tag) ."')";
     if (! $conn->query($sql)) {
         echo "Error: " . $sql . "<br>" . $conn->error;
         exit();
@@ -32,7 +32,7 @@ foreach ($tags as $tag) {
 // si no hay ninguna referencia simplemente no entra
 foreach ($references as $reference) {
     $sql = "INSERT INTO referencias (id_articulo, referencia)
-    VALUES ('". $last_id ."', '". $reference ."')";
+    VALUES ('". $conn->escape_string($last_id) ."', '". $conn->escape_string($reference) ."')";
     if (! $conn->query($sql)) {
         echo "Error: " . $sql . "<br>" . $conn->error;
         exit();
