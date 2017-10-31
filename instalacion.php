@@ -37,24 +37,52 @@ $conn->select_db($bd);
 
 // crear todas las tablas
 $sql = "
-CREATE TABLE `articulo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(200) NOT NULL,
-  `contenido` text NOT NULL,
-  `f_ult_mod` datetime DEFAULT NULL,
-  `autor` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `usuario` (
+    `dni` varchar(9) NOT NULL,
+    `nombre` varchar(30) NOT NULL,
+    `apellidos` varchar(30) DEFAULT NULL,
+    `telefono` varchar(9) DEFAULT NULL,
+    `f_nacimiento` date NOT NULL,
+    `email` varchar(30) NOT NULL,
+    `hash` varchar(100) NOT NULL,
+    PRIMARY KEY (`dni`)
 ) DEFAULT CHARSET=utf8;
 ";
-execute_query($sql, "Creando tabla articulo",
-                    "Error al intentar crear la tabla articulo");
+execute_query($sql, "Creando tabla usuario",
+                    "Error al intentar crear la tabla usuario");
+
+$hash0 = '$2y$10$1gCiGeiblybH1tO3zfNs1O.2dhdLDiinB0aZvUx/ArZv5jWgSy1lu';
+$hash1 = '$2y$10$HWlS7Zepe.4nyDkYsGvPIeYIc4SIChwjae0aZzo8WglYfZdJH/npC';
+$hash2 = '$2y$10$Z3I.djliaLK6VGda2ECo/.ateRlmib1lnDT9HvWTTGZnX1eK12X26';
+$sql = "
+INSERT INTO `usuario` VALUES
+('anonimo','Anónimo','Anonimato','000000000','1900-01-01','anonimo@ikales.ehu.eus','$hash0'),
+('11111111H','user1','user1.1','111111111','1111-11-11','user1@ikales.ehu.eus','$hash1'),
+('22222222J','user2','user2.1','222222222','2222-02-02','user2@ikales.ehu.eus','$hash2');
+";
+execute_query($sql, "Insertando entradas de prueba en la tabla usuario",
+                    "Error al intentar insertar entradas en la tabla usuario");
 
 $sql = "
+CREATE TABLE `articulo` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `titulo` varchar(200) NOT NULL,
+    `contenido` text NOT NULL,
+    `f_ult_mod` datetime DEFAULT NULL,
+    `autor` varchar(9) NOT NULL,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`autor`) REFERENCES `usuario` (`dni`)
+) DEFAULT CHARSET=utf8;
+";
+
+execute_query($sql, "Creando tabla articulo",
+"Error al intentar crear la tabla articulo");
+$sql = "
 CREATE TABLE `categorias` (
-  `id_articulo` int(11) NOT NULL,
-  `categoria` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_articulo`,`categoria`),
-  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
+    `id_articulo` int(11) NOT NULL,
+    `categoria` varchar(20) NOT NULL,
+    PRIMARY KEY (`id_articulo`,`categoria`),
+    FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8;
 ";
 execute_query($sql, "Creando tabla categorias",
@@ -62,39 +90,14 @@ execute_query($sql, "Creando tabla categorias",
 
 $sql = "
 CREATE TABLE `referencias` (
-  `id_articulo` int(11) NOT NULL,
-  `referencia` varchar(200) NOT NULL,
-  PRIMARY KEY (`id_articulo`,`referencia`),
-  FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
+    `id_articulo` int(11) NOT NULL,
+    `referencia` varchar(200) NOT NULL,
+    PRIMARY KEY (`id_articulo`,`referencia`),
+    FOREIGN KEY (`id_articulo`) REFERENCES `articulo` (`id`) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8;
 ";
 execute_query($sql, "Creando tabla referencias",
                     "Error al intentar crear la tabla referencias");
-
-$sql = "
-CREATE TABLE `usuario` (
-  `dni` varchar(9) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
-  `apellidos` varchar(30) DEFAULT NULL,
-  `telefono` varchar(9) DEFAULT NULL,
-  `f_nacimiento` date NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `hash` varchar(100) NOT NULL,
-  PRIMARY KEY (`dni`)
-) DEFAULT CHARSET=utf8;
-";
-execute_query($sql, "Creando tabla usuario",
-                    "Error al intentar crear la tabla usuario");
-
-$hash1 = '$2y$10$HWlS7Zepe.4nyDkYsGvPIeYIc4SIChwjae0aZzo8WglYfZdJH/npC';
-$hash2 = '$2y$10$Z3I.djliaLK6VGda2ECo/.ateRlmib1lnDT9HvWTTGZnX1eK12X26';
-$sql = "
-INSERT INTO `usuario` VALUES
-('11111111H','user1','user1.1','111111111','1111-11-11','11111','$hash1'),
-('22222222J','user2','user2.1','222222222','2222-02-02','22222','$hash2');
-";
-execute_query($sql, "Insertando entradas de prueba en la tabla usuario",
-                    "Error al intentar insertar entradas en la tabla usuario");
 
 // modificacion de bd finalizada
 echo("Exito en todas las operaciones");

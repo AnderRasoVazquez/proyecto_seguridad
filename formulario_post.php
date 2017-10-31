@@ -1,6 +1,12 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+$full_name;
+if (isset($_SESSION["currentUser"])) {
+    $full_name=$_SESSION["currentUserName"]." ".$_SESSION["currentUserSecondName"];
+} else {
+    $full_name="Anónimo";
+}
 ?>
 
 <h1>Create new Snippet</h1>
@@ -9,7 +15,7 @@ include "includes/header.php";
         <legend>Title:</legend>
         <input class="form-control" type="text" name="title" value="" maxlength="200">
         <legend>Author:</legend>
-        <input class="form-control form-control-sm" type="text" name="author" value="" maxlength="50">
+        <input class="form-control form-control-sm" type="text" name="author" value="<?=$full_name?>" maxlength="50" disabled>
         <legend>Tags:</legend>
         <input class="form-control form-control-sm" type="text" id="tag" name="tags[]" value="" maxlength="20">
         <div id="tag_container">
