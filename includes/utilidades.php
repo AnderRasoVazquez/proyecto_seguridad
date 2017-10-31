@@ -61,4 +61,20 @@ function endSession() {
     session_destroy();
 }
 
+function getFullNameOf($pDni) {
+    // dado un dni, devuelve el nombre completo (nombre + apellidos) del usuario
+    require_once("includes/DB/Conexion.php");
+    $conn = new Conexion();
+    $sql="SELECT nombre, apellidos FROM usuario WHERE dni='".$pDni."'";
+    if (!$res = $conn->query($sql)) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+        $conn->close();
+        return false;
+    }
+    $row = $res->fetch_object();
+    $full_name = $row->nombre." ".$row->apellidos;
+    $conn->close();
+    return $full_name;
+}
+
 ?>
