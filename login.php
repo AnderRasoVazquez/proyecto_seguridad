@@ -7,9 +7,13 @@ require_once 'includes/DB/Conexion.php';
 $conn = new Conexion();
 $dni = $_POST["dni"];
 $pass = $_POST["pass"];
-$res = $conn->query("SELECT * FROM usuario WHERE dni='$dni'");
+$res = $conn->query("SELECT * FROM usuario WHERE dni='".$conn->escape_string($dni)."'");
 
-if (mysqli_num_rows($res)!=0) {
+
+if (!$res) {
+        echo "Error: " . "foo" . "<br>" . $conn->error;
+        exit();
+} else if (mysqli_num_rows($res)!=0) {
     $row = $res->fetch_object();
     // usuario encontrado
     if (password_verify($pass, $row->hash)) {
