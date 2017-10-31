@@ -1,6 +1,7 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+include "includes/utilidades.php";
 
 require_once("includes/DB/Conexion.php");
 $con = new Conexion();
@@ -17,10 +18,13 @@ $tag_res = $con->query($sql);
 
 $sql="SELECT * FROM referencias WHERE id_articulo=". $id ."";
 $ref_res = $con->query($sql);
+
+
+$full_name = getFullNameOf($row->autor);
 ?>
 
 <h1><?= $row->titulo ?><a class="btn btn-sm btn-primary" href="form_mod_snippet.php?id=<?=$id?>"><i class='material-icons'>edit</i></a><a class="btn btn-sm btn-danger" onclick="return confirm('Delete Snippet?')" href="del_snippet.php?id=<?=$id?>"><i class='material-icons'>delete</i></a></h1>
-<h4>by <?= $row->autor ?></h4>
+<h4>by <a href="search_snippet.php?search_term=<?=$full_name?>""><?=$full_name?></a></h4>
 <h4>Last edit: <?= $row->f_ult_mod ?></h4>
 
 

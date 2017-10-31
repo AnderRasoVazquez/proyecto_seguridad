@@ -1,6 +1,7 @@
 <?php
 // cabecera de la pagina
 include "includes/header.php";
+include "includes/utilidades.php";
 
 require_once 'includes/DB/Conexion.php';
 
@@ -13,19 +14,19 @@ $birthdate = $_POST["birthdate"];
 $email = $_POST["email"];
 $pass = $_POST["pass"];
 
-$res = $conn->query("SELECT * FROM usuario WHERE dni='$dni'");
+$res = $conn->query("SELECT * FROM usuario WHERE dni='".$conn->escape_string($dni)."'");
 
 if (mysqli_num_rows($res)==0) {
     //se registra al usuario en la base de datos
     $hash = password_hash($pass, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuario
-    VALUES ('$dni','$name','$secondname','$phone',$birthdate,'$email','$hash')";
+    VALUES ('".$conn->escape_string($dni)."','".$conn->escape_string($name)."',
+    '".$conn->escape_string($secondname)."','".$conn->escape_string($phone)."',
+    '".$conn->escape_string($birthdate)."','".$conn->escape_string($email)."',
+    '".$conn->escape_string($hash)."')";
     if($conn->query($sql)){
         // se inicia su sesión
-        session_start();
-        // variables de sesión
-        $_SESSION["currentUser"] = $dni;
-        $_SESSION["currentUserName"] = $name;
+        createSession($dni, $name, $secondname);
         // redirige a la página de login
         header("Location: index.php");
         exit();

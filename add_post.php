@@ -4,15 +4,24 @@ require_once("includes/DB/Conexion.php");
 $conn = new Conexion();
 
 $title = $_POST["title"];
-$author = $_POST["author"];
 $tags = $_POST["tags"];
 $content = $_POST["content"];
 $references = $_POST["references"];
-
 $f_ult_mod = date('Y/m/d H:i:s');
 
+session_start();
+$author;
+if (isset($_SESSION["currentUser"])) {
+    // si hay sesión iniciada mostramos enlace al perfil
+    $author = $_SESSION["currentUser"];
+}
+else {
+    $author= "anonimo";
+}
+
 $sql = "INSERT INTO articulo (titulo, contenido, autor, f_ult_mod)
-VALUES ('". $conn->escape_string($title) ."', '". $conn->escape_string($content) ."', '". $conn->escape_string($author) ."', '". $conn->escape_string($f_ult_mod) ."')";
+VALUES ('".$conn->escape_string($title)."', '".$conn->escape_string($content)."',
+'".$conn->escape_string($author)."', '".$conn->escape_string($f_ult_mod)."')";
 if ($conn->query($sql) === TRUE) {
     $last_id = $conn->getLastId();
 } else {
