@@ -124,6 +124,13 @@ function isPassCorrect(pPass) {
     return success;
 }
 
+function isPhoneCorrect(pPhone) {
+    var success = false;
+    // condiciones para que la contraseña sea válida
+    success = pPhone.length == 9;
+    return success;
+}
+
 function isEmailCorrect(pEmail) {
     var success = false;
     /*
