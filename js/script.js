@@ -87,32 +87,38 @@ function checkModification() {
     var phone = document.forms["preferences_form"]["phone"].value;
     var email = document.forms["preferences_form"]["email"].value;
     var success = true;
-    if (success = isNameCorrect(name)) {
+    if (isNameCorrect(name)) {
         console.log("name good");
         document.forms["preferences_form"]["name"].classList.remove("form-control-error");
         success = success && true;
+        console.log(success);
     } else {
         console.log("name bad");
         document.forms["preferences_form"]["name"].classList.add("form-control-error");
         success = false;
+        console.log(success);
     }
-    if (success = isPhoneCorrect(phone)) {
+    if (isPhoneCorrect(phone)) {
         console.log("phone good");
         document.forms["preferences_form"]["phone"].classList.remove("form-control-error");
         success = success && true;
+        console.log(success);
     } else {
         console.log("phone bad");
         document.forms["preferences_form"]["phone"].classList.add("form-control-error");
         success = false;
+        console.log(success);
     }
-    if (success = isEmailCorrect(email)) {
+    if (isEmailCorrect(email)) {
         console.log("email good");
         document.forms["preferences_form"]["email"].classList.remove("form-control-error");
         success = success && true;
+        console.log(success);
     } else {
         console.log("email bad");
         document.forms["preferences_form"]["email"].classList.add("form-control-error");
         success = false;
+        console.log(success);
     }
     if (success) {
         document.forms["preferences_form"].submit();
