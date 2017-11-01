@@ -67,11 +67,11 @@ function checkSignup() {
 }
 
 function checkLogin() {
-    var dni = document.forms["loginForm"]["dni"].value;
-    var pass = document.forms["loginForm"]["pass"].value;
+    var dni = document.forms["login_form"]["dni"].value;
+    var pass = document.forms["login_form"]["pass"].value;
     // Comprobar si los datos de los campos son válidos
     if (isDniCorrect(dni) && isPassCorrect(pass)) {
-        document.getElementById("loginForm").submit();
+        document.getElementById("login_form").submit();
     } else {
         showLoginError();
     }

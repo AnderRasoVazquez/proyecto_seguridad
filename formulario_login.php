@@ -8,7 +8,7 @@ if (isset($_SESSION["currentUser"])) {
 }
 ?>
     <h1>Login to Snippedia</h1>
-    <form action="login.php" method="post" id="loginForm">
+    <form action="login.php" method="post" id="login_form">
         <legend>DNI:</legend>
         <input name="dni" id="login_dni" type="text" maxlength="9" class="form-control form-control-sm">
         <legend>Password:</legend>
