@@ -23,7 +23,6 @@ function checkSignup() {
     var name = document.forms["signupForm"]["name"].value;
     var birthdate = document.forms["signupForm"]["birthdate"].value;
     var email = document.forms["signupForm"]["email"].value;
-    var phonenumber = document.forms["signupForm"]["phone"].value;
     var pass = document.forms["signupForm"]["pass"].value;
     var pass2 = document.forms["signupForm"]["pass2"].value;
     // Comprobar si los datos de los campos son válidos
@@ -67,11 +66,11 @@ function checkSignup() {
 }
 
 function checkLogin() {
-    var dni = document.forms["loginForm"]["dni"].value;
-    var pass = document.forms["loginForm"]["pass"].value;
+    var dni = document.forms["login_form"]["dni"].value;
+    var pass = document.forms["login_form"]["pass"].value;
     // Comprobar si los datos de los campos son válidos
     if (isDniCorrect(dni) && isPassCorrect(pass)) {
-        document.getElementById("loginForm").submit();
+        document.getElementById("login_form").submit();
     } else {
         showLoginError();
     }
@@ -80,6 +79,50 @@ function checkLogin() {
 function showLoginError() {
     document.getElementById("error").innerHTML =
         "El nombre de usuario o contraseña no es válido."
+}
+
+function checkModification() {
+    console.log("foo");
+    var name = document.forms["preferences_form"]["name"].value;
+    var phone = document.forms["preferences_form"]["phone"].value;
+    var email = document.forms["preferences_form"]["email"].value;
+    var success = true;
+    if (isNameCorrect(name)) {
+        console.log("name good");
+        document.forms["preferences_form"]["name"].classList.remove("form-control-error");
+        success = success && true;
+        console.log(success);
+    } else {
+        console.log("name bad");
+        document.forms["preferences_form"]["name"].classList.add("form-control-error");
+        success = false;
+        console.log(success);
+    }
+    if (isPhoneCorrect(phone)) {
+        console.log("phone good");
+        document.forms["preferences_form"]["phone"].classList.remove("form-control-error");
+        success = success && true;
+        console.log(success);
+    } else {
+        console.log("phone bad");
+        document.forms["preferences_form"]["phone"].classList.add("form-control-error");
+        success = false;
+        console.log(success);
+    }
+    if (isEmailCorrect(email)) {
+        console.log("email good");
+        document.forms["preferences_form"]["email"].classList.remove("form-control-error");
+        success = success && true;
+        console.log(success);
+    } else {
+        console.log("email bad");
+        document.forms["preferences_form"]["email"].classList.add("form-control-error");
+        success = false;
+        console.log(success);
+    }
+    if (success) {
+        document.forms["preferences_form"].submit();
+    }
 }
 
 function isDniCorrect(pDni) {
@@ -123,6 +166,24 @@ function isPassCorrect(pPass) {
     // condiciones para que la contraseña sea válida
     success = pPass != "";
     return success;
+}
+
+function isPhoneCorrect(pPhone) {
+    // no funciona si el número viene con alguna 'e'
+    var success = false;
+    // condiciones para que la contraseña sea válida
+    success = (pPhone == "") // blanco
+                || (!isNaN(pPhone)
+                    && pPhone/Math.pow(10, 8) >= 1 //9 dígitos al menos
+                    && pPhone/Math.pow(10, 8) < 10); // 9 dígitos como max
+    return success;
+}
+
+function cutPhone(pInput) {
+    console.log("foo");
+    if (pInput.value.length > 9) {
+        pInput.value = pInput.value.slice(0, 9);
+    }
 }
 
 function isEmailCorrect(pEmail) {
