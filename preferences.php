@@ -51,7 +51,7 @@ if(!$res) {
     <br><i>The fields marked with * are optional.</i><br><br>
 
     <input type='button' value='Back' class="btn btn-dark" onclick="discardAndLeave()">
-    <input type='submit' value='Save changes' class="btn btn-dark">
+    <input type='button' value='Save changes' class="btn btn-dark" onclick="checkModification()">
     <input type='reset' value='Discard changes'class="btn btn-secondary">
 
     <script type="text/javascript">
