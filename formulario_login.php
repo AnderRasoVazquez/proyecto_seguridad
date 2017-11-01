@@ -10,13 +10,13 @@ if (isset($_SESSION["currentUser"])) {
     <h1>Login to Snippedia</h1>
     <form action="login.php" method="post" id="login_form">
         <legend>DNI:</legend>
-        <input name="dni" id="login_dni" type="text" maxlength="9" class="form-control form-control-sm">
+        <input type="text" id="login_dni" name="dni" class="form-control form-control-sm" maxlength="9">
         <legend>Password:</legend>
-        <input name="pass" id="login_pass" type="password" maxlength="20" class="form-control form-control-sm">
+        <input type="password" id="login_pass" name="pass" class="form-control form-control-sm" maxlength="20">
         <!-- párrafo en blanco para añadir posible mensaje de error -->
         <p id="error"></p>
-        <input name="submit_button" id="login_submit_button" type='button' value="Login" class="btn btn-dark" onclick="checkLogin()">
-        <input name="reset_button" id="login_reset_button" type='reset' value="Reset" class="btn btn-secondary">
+        <input type='button' id="login_submit_button" name="submit_button" value="Login" class="btn btn-dark" onclick="checkLogin()">
+        <input type='reset' id="login_reset_button" name="reset_button" value="Reset" class="btn btn-secondary">
     </form>
 <?php
 // cabecera de la pagina
