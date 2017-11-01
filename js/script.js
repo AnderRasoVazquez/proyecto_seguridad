@@ -163,10 +163,13 @@ function isPassCorrect(pPass) {
 }
 
 function isPhoneCorrect(pPhone) {
+    // no funciona si el número viene con alguna 'e'
     var success = false;
     // condiciones para que la contraseña sea válida
     success = (pPhone == "") // blanco
-                || (pPhone/Math.pow(10, 8) >= 1) //9 dígitos al menos;
+                || (!isNaN(pPhone)
+                    && pPhone/Math.pow(10, 8) >= 1 //9 dígitos al menos
+                    && pPhone/Math.pow(10, 8) < 10); // 9 dígitos como max
     return success;
 }
 
