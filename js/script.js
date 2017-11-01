@@ -127,7 +127,8 @@ function isPassCorrect(pPass) {
 function isPhoneCorrect(pPhone) {
     var success = false;
     // condiciones para que la contraseña sea válida
-    success = pPhone.length == 9;
+    success = (pPhone == "") // blanco
+                || (pPhone/Math.pow(10, 8) >= 1) //9 dígitos al menos;
     return success;
 }
 
