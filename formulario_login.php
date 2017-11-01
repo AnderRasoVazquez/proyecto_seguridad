@@ -4,7 +4,7 @@ include "includes/header.php";
 if (isset($_SESSION["currentUser"])) {
     // si ya hay una sessión iniciada
     // la pagina de login redirige inmediatamente a index.php
-    header("Location: index.php");
+    header("Location: profile.php");
 }
 ?>
     <h1>Login to Snippedia</h1>
