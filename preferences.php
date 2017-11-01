@@ -44,7 +44,7 @@ if(!$res) {
     <legend>Second name*:</legend>
     <input type="text" id="pref_second_name" name="second_name" class="form-control form-control-sm" maxlength="30" value="<?=$second_name?>">
     <legend>Phone number*:</legend>
-    <input type="numer" id="pref_phone" name="phone" class="form-control form-control-sm" maxlength="9" value="<?=$phone?>">
+    <input type="number" id="pref_phone" name="phone" class="form-control form-control-sm" maxlength="9" value="<?=$phone?>">
     <legend>Email adress:</legend>
     <input type="text" id="pref_email" name="email" class="form-control form-control-sm" maxlength="30" value="<?=$email?>">
 
