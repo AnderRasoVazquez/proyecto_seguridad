@@ -179,6 +179,13 @@ function isPhoneCorrect(pPhone) {
     return success;
 }
 
+function cutPhone(pInput) {
+    console.log("foo");
+    if (pInput.value.length > 9) {
+        pInput.value = pInput.value.slice(0, 9);
+    }
+}
+
 function isEmailCorrect(pEmail) {
     var success = false;
     /*
