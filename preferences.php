@@ -20,7 +20,7 @@ $phone;
 $email;
 
 if(!$res) {
-    //error
+    // error
     echo "Error: " . $sql . "<br>" . $conn->error;
     exit();
 } else if (mysqli_num_rows($res)!=0) {
@@ -36,9 +36,9 @@ if(!$res) {
 
 <h1>My account - Preferences</h1>
 
-<form action="index.html" method="post" id="preferences_form">
+<form action="modify_account.php" method="post" id="preferences_form">
     <legend>DNI:</legend>
-    <input type="text" id="pref_dni" name="dni" class="form-control form-control-sm" maxlength="9" value="<?=$_SESSION["currentUser"]?>" disabled>
+    <input type="text" id="pref_dni" name="dni" class="form-control form-control-sm" maxlength="9" value="<?=$_SESSION["currentUser"]?>" readonly>
     <legend>Name:</legend>
     <input type="text" id="pref_name" name="name" class="form-control form-control-sm" maxlength="30" value="<?=$name?>">
     <legend>Second name*:</legend>
@@ -51,7 +51,7 @@ if(!$res) {
     <br><i>The fields marked with * are optional.</i><br><br>
 
     <input type='button' value='Back' class="btn btn-dark" onclick="discardAndLeave()">
-    <input type='button' value='Save changes' class="btn btn-dark" onclick="">
+    <input type='submit' value='Save changes' class="btn btn-dark">
     <input type='reset' value='Discard changes'class="btn btn-secondary">
 
     <script type="text/javascript">
