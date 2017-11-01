@@ -23,7 +23,6 @@ function checkSignup() {
     var name = document.forms["signupForm"]["name"].value;
     var birthdate = document.forms["signupForm"]["birthdate"].value;
     var email = document.forms["signupForm"]["email"].value;
-    var phonenumber = document.forms["signupForm"]["phone"].value;
     var pass = document.forms["signupForm"]["pass"].value;
     var pass2 = document.forms["signupForm"]["pass2"].value;
     // Comprobar si los datos de los campos son válidos
