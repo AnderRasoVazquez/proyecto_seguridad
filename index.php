@@ -10,9 +10,16 @@ include "includes/header.php";
 </p>
 
 <h3>Where to start?</h3>
-
-<a href="formulario_login.php">Click here if you want to login.</a> <br>
-<a href="formulario_registro.php">Don't have an account yet?</a> <br>
+<?php
+if (isset($_SESSION["currentUser"])) {
+    // si hay sesión iniciada mostramos enlace al perfil
+    echo("<a href='profile.php'>Your profile</a> <br>");
+} else {
+    // si no, mostramos enlace al login y al signup
+    echo("<a href='formulario_login.php'>Click here if you want to login.</a> <br>");
+    echo("<a href='formulario_registro.php'>Don't have an account yet?</a> <br>");
+}
+?>
 <a href="formulario_post.php">Submit a new Snippet!</a> <br>
 
 <h2>Snippet making tutorial</h2>
