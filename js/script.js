@@ -88,21 +88,18 @@ function checkModification() {
     var success = true;
     if (isNameCorrect(name)) {
         document.forms["preferences_form"]["name"].classList.remove("form-control-error");
-        success = success && true;
     } else {
         document.forms["preferences_form"]["name"].classList.add("form-control-error");
         success = false;
     }
     if (isPhoneCorrect(phone)) {
         document.forms["preferences_form"]["phone"].classList.remove("form-control-error");
-        success = success && true;
     } else {
         document.forms["preferences_form"]["phone"].classList.add("form-control-error");
         success = false;
     }
     if (isEmailCorrect(email)) {
         document.forms["preferences_form"]["email"].classList.remove("form-control-error");
-        success = success && true;
     } else {
         document.forms["preferences_form"]["email"].classList.add("form-control-error");
         success = false;
