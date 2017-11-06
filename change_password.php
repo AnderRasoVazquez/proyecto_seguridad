@@ -32,15 +32,18 @@ if($found) {
     $res = $conn->query($sql);
     if($res) {
         // se han actualiado los datos
+        $conn->close();
         header("Location: profile.php");
         exit();
     } else {
         // error
-        header("Location: index.php");
+        $conn->close();
+        header("Location: form_change_pass.php");
         exit();
     }
 } else {
     // usuario no encontrado. contraseña incorrecta
+    $conn->close();
     header("Location: form_change_pass.php");
     exit();
 }
