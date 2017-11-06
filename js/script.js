@@ -109,6 +109,19 @@ function checkModification() {
     }
 }
 
+function checkChangePass() {
+    var pass_new = document.forms["form_change_pass"]["pass_new"].value;
+    var pass_new2 = document.forms["form_change_pass"]["pass_new2"].value;
+    if (pass_new == pass_new2) {
+        document.forms["form_change_pass"]["pass_new2"].classList.remove("form-control-error");
+        if (window.confirm("Are you sure you want to change your current password?")) {
+            document.forms["form_change_pass"].submit();
+        }
+    } else {
+        document.forms["form_change_pass"]["pass_new2"].classList.add("form-control-error");
+    }
+}
+
 function isDniCorrect(pDni) {
     /*
     código de
