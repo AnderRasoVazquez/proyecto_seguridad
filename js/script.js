@@ -298,3 +298,9 @@ function openTab(evt, id) {
     document.getElementById(id).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+function discardAndLeave() {
+    if (window.confirm("Changes will NOT be saved. Are you sure you want to go back?") == true) {
+        document.location.href='profile.php';
+    }
+}

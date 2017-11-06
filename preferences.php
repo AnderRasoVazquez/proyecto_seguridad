@@ -53,14 +53,6 @@ if(!$res) {
     <input type='button' value='Back' class="btn btn-dark" onclick="discardAndLeave()">
     <input type='button' value='Save changes' class="btn btn-dark" onclick="checkModification()">
     <input type='reset' value='Discard changes'class="btn btn-secondary">
-
-    <script type="text/javascript">
-        function discardAndLeave() {
-            if (window.confirm("Changes will NOT be saved. Are you sure you want to go back?") == true) {
-                document.location.href='profile.php';
-            }
-        }
-    </script>
 </form>
 
 
