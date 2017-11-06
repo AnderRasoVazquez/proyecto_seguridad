@@ -18,7 +18,7 @@ if (!isset($_SESSION["currentUser"])) {
     <input type="password" id="pass_new" name="pass_new" class="form-control form-control-sm" maxlength="20">
     <legend>Repeat password:</legend>
     <input type="password" id="pass_new2" name="pass_new2" class="form-control form-control-sm" maxlength="20">
-
+    <p></p>
     <input type='button' value='Back' class="btn btn-dark" onclick="discardAndLeave()">
     <input type='button' value='Save changes' class="btn btn-dark" onclick="checkChangePass()">
     <input type='reset' value='Discard changes'class="btn btn-secondary">
