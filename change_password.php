@@ -4,12 +4,19 @@ include "includes/header.php";
 
 require_once 'includes/DB/Conexion.php';
 
+if (isset($_SESSION["currentUser"])) {
+    $dni = $_SESSION["currentUser"];
+} else {
+    // si no hay sesión iniciada redirigimos a index
+    header("Location: formulario_login.php");
+    exit();
+}
+
 $conn = new Conexion();
 $pass_old = $_POST["pass_old"];
 $pass_new = $_POST["pass_new"];
 
-
-$sql = "SELECT hash FROM usuario";
+$sql = "SELECT dni, hash FROM usuario";
 $res = $conn->query($sql);
 $row;
 $hash_old;
@@ -17,7 +24,7 @@ $found = false;
 
 while($row = $res->fetch_object()) {
     // para cada hash
-    if(password_verify($pass_old, $row->hash)) {
+    if($dni == $row->dni && password_verify($pass_old, $row->hash)) {
         $hash_old = $row->hash;
         $found = true;
         break;
