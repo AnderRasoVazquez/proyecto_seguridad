@@ -15,6 +15,7 @@ $full_name = getFullNameOf($_SESSION["currentUser"]);
 <input type="button" class="btn" value="Log out" onclick="document.location.href='logout.php'"><br>
 <input type="button" class="btn" value="Your snippets" onclick="document.location.href='snippets_by_author.php?author=<?=$_SESSION["currentUser"]?>'"><br>
 <input type="button" class="btn" value="Preferences" onclick="document.location.href='preferences.php'"><br>
+<input type="button" class="btn" value="Change password" onclick="document.location.href='form_change_pass.php'"><br>
 
 <?php
 // pie de pagina
