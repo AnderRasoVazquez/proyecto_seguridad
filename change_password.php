@@ -40,22 +40,18 @@ if($found) {
     if($res) {
         // se han actualiado los datos
         $conn->close();
-        header("Location: profile.php");
-        exit();
+        echo "<h1>PASSWORD CHANGED!</h1>";
     } else {
         // error
         $conn->close();
-        header("Location: form_change_pass.php");
-        exit();
+         echo "<h1>DATABASE ERROR</h1>";
     }
 } else {
     // usuario no encontrado. contraseña incorrecta
     $conn->close();
-    header("Location: form_change_pass.php");
-    exit();
+    echo "<h1>WRONG PASSWORD</h1>";
 }
-
-$conn->close();
+echo "<input type='button' class='btn btn-dark' value='Return to profile' onclick='document.location.href=`profile.php`'>";
 
 // cabecera de la pagina
 include "includes/footer.php";
