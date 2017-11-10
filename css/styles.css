@@ -176,6 +176,10 @@ input.form-control:disabled {
     background: #F0F0F0;
 }
 
+input.form-control:read-only {
+    background: #F0F0F0;
+}
+
 
 .form-control-sm {
     width: 250px;
