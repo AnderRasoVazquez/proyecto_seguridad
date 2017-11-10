@@ -12,10 +12,13 @@ $full_name = getFullNameOf($_SESSION["currentUser"]);
 ?>
 
 <h1>Welcome <?=$full_name?></h1>
-<input type="button" class="btn" value="Log out" onclick="document.location.href='logout.php'"><br>
-<input type="button" class="btn" value="Your snippets" onclick="document.location.href='snippets_by_author.php?author=<?=$_SESSION["currentUser"]?>'"><br>
-<input type="button" class="btn" value="Preferences" onclick="document.location.href='preferences.php'"><br>
-<input type="button" class="btn" value="Change password" onclick="document.location.href='form_change_pass.php'"><br>
+<button class="button-profile" onclick="document.location.href='logout.php'">Log out</button>
+<br>
+<button class="button-profile" onclick="document.location.href='snippets_by_author.php?author=<?=$_SESSION["currentUser"]?>'">Your snippets</button>
+<br>
+<button class="button-profile" onclick="document.location.href='preferences.php'">Preferences</button>
+<br>
+<button class="button-profile" onclick="document.location.href='form_change_pass.php'">Change password</button>
 
 <?php
 // pie de pagina
