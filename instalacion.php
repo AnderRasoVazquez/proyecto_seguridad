@@ -1,8 +1,8 @@
 <?php
 
 $server = "localhost";
-$user = "sgssi";
-$passw = "sgssi";
+$user = "Xdperez067";
+$passw = "AVmu8sW4r";
 $bd = "Xdperez067_db_sgssi";
 
 $conn = new mysqli($server, $user, $passw);

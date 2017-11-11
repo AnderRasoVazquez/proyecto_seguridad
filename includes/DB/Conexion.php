@@ -105,8 +105,8 @@ class Conexion
     public function __construct($connect = true)
     {
         $this->host = 'localhost';
-        $this->user = 'sgssi';
-        $this->pass = 'sgssi';
+        $this->user = 'Xdperez067';
+        $this->pass = 'AVmu8sW4r';
         $this->db = 'Xdperez067_db_sgssi';
 
         /**
