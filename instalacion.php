@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "sgssi";
 $passw = "sgssi";
-$bd = "db_sgssi";
+$bd = "Xdperez067_db_sgssi";
 
 $conn = new mysqli($server, $user, $passw);
 mysqli_set_charset($conn, "utf8");

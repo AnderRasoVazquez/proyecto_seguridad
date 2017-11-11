@@ -107,7 +107,7 @@ class Conexion
         $this->host = 'localhost';
         $this->user = 'sgssi';
         $this->pass = 'sgssi';
-        $this->db = 'db_sgssi';
+        $this->db = 'Xdperez067_db_sgssi';
 
         /**
          * Connect sirve para que se conecte automaticamente a la BD
