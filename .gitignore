@@ -1,1 +1,6 @@
 # Archivos a ignorar
+# nodejs stuff
+node_modules/
+package.json
+gruntfile.js
+# /nodejs stuff

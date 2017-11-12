@@ -107,7 +107,7 @@ class Conexion
         $this->host = 'localhost';
         $this->user = 'sgssi';
         $this->pass = 'sgssi';
-        $this->db = 'bd_sgssi';
+        $this->db = 'db_sgssi';
 
         /**
          * Connect sirve para que se conecte automaticamente a la BD
@@ -119,13 +119,15 @@ class Conexion
 
     public function connect()
     {
-        if ( ! $this->connection = mysqli_connect(
+        if ( $this->connection = mysqli_connect(
                 $this->host,
                 $this->user,
                 $this->pass,
                 $this->db
             )
         ) {
+            $this->connection->set_charset("utf8");
+        } else {
             die('Imposible conectar con la base de datos: ' . mysqli_connect_error());
         }
     }
@@ -145,5 +147,20 @@ class Conexion
     public function close()
     {
         return $this->connection->close();
+    }
+
+    /**
+     * Se usa después de una consulta para devolver
+     * el último id cuando es AUTO_INCREMENT
+     * @return int
+     */
+    public function getLastId()
+    {
+        return $this->connection->insert_id;
+    }
+
+    public function escape_string($the_string)
+    {
+        return $this->connection->escape_string($the_string);
     }
 }
