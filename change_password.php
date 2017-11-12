@@ -3,6 +3,7 @@
 include "includes/header.php";
 
 require_once 'includes/DB/Conexion.php';
+require_once 'includes/password_compat/lib/password.php';
 
 if (isset($_SESSION["currentUser"])) {
     $dni = $_SESSION["currentUser"];

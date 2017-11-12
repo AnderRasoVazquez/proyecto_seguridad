@@ -4,6 +4,7 @@ include "includes/header.php";
 include "includes/utilidades.php";
 
 require_once 'includes/DB/Conexion.php';
+require_once 'includes/password_compat/lib/password.php';
 
 $conn = new Conexion();
 $dni = $_POST["dni"];
