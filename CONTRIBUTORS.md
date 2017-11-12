@@ -9,10 +9,10 @@
 
 ## Externos
 
-+ [**José Luis Cortés**](https://github.com/lscortesc)
-    + Clase para conectarse a la BD con mysqli
 + [**Anthony Ferrara**](https://github.com/ircmaxell)
     + Librería password_compat para utilizar las funciones password_* de php en versiones anteriores a la 5.5.0
++ [**José Luis Cortés**](https://github.com/lscortesc)
+    + Clase para conectarse a la BD con mysqli
 
 
 [**Lista entera de contribuidores**](https://github.com/AnderRasoVazquez/proyecto_seguridad/graphs/contributors)
